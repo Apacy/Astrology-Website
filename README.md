@@ -1,65 +1,78 @@
 # Astrology Website
 
-This is a professional astrology website for Marina Smit, a Vedic astrologer and founder of DeviAcademy. The website provides comprehensive astrological services, educational courses, and cosmic guidance in Ukrainian/Russian language.
+This is an **Astrology Website** project developed as my first comercial project [View Project](https://marinasmit.com.ua)
+
 ## Technologies Used
-  - HTML5
-  - CSS3
-  - JavaScript
-  - Google Fonts (Montserrat)
-  - Responsive Design
-  - Intersection Observer API for animations
+ - HTML5  
+ - CSS3  
+ - Google Fonts (or other web fonts as used)  
+
+---
+
 ## Key Features
-  - Multi-page astrology website with celestial design theme
-  - Comprehensive astrological services (9 different categories)
-  - Educational courses in Vedic astrology
-  - Interactive dropdown course details
-  - Mobile-responsive design with hamburger menu
-  - Smooth scrolling animations and hover effects
-  - Floating contact button with social media links
-  - Testimonials section with client reviews
-  - Professional color scheme with rose gold and midnight tones
+ - Multi-section landing site (Services, Courses, Reviews, Contacts)  
+ - Responsive design for various device sizes  
+ - Semantic HTML structure  
+ - Smooth navigation and content sections  
+ - Contact section and social links integration  
+
+---
+
 ## How to Run
-  - Download or clone the Astrology-Website folder
-  - Ensure all files are included: index.html, style.css, script.js, and image assets
-  - Open index.html in your preferred web browser
+ 1. Download (or clone) the **Astrology Website** folder  
+ 2. Ensure it contains the main HTML and CSS files (e.g. `index.html`, `style.css`, plus assets like images)  
+ 3. Open the main HTML file in your preferred browser  
+
+---
+
 ## Project Structure
 ```
-Astology-site/
-│
-├── index.html
-├── style.css
-├── script.js
+Astrology-Website/
 ├── image/
+│   ├── baby.JPG
+│   ├── baby.png
+│   ├── background_gold_pink.jpg
+│   ├── bg.PNG
+│   ├── destiny.PNG
+│   ├── finance.PNG
+│   ├── health.PNG
 │   ├── hero.PNG
+│   ├── horoscope.PNG
+│   ├── logoms.PNG
 │   ├── logoms.svg
-│   ├── service-bcground.PNG
-│   └── various service images...
-└── social-media/
-    ├── telegram.svg
-    ├── instagram.svg
-    ├── whatsapp.svg
-    └── phone-contact.png
-```    
+│   ├── migration.PNG
+│   ├── muhurta.PNG
+│   ├── prof_actv.PNG
+│   ├── relations.PNG
+│   ├── retrification.PNG
+│   └── service-bcground.PNG
+├── index.html
+├── README.md
+├── script.js
+├── social-media/
+│   ├── instagram.svg
+│   ├── phone-contact.png
+│   ├── telegram.svg
+│   └── whatsapp.svg
+├── study-plan/
+│   └── OVA.pdf
+└── style.css
+```
+---
+
 ## Design Highlights
-  - Celestial-themed gradient backgrounds
-  - Responsive navigation with mobile hamburger menu
-  - Service cards with hover animations and background icons
-  - Elegant typography using Montserrat font
-  - Professional color palette (rose, gold, midnight blue)
-  - Smooth fade-in animations on scroll
-  - Floating contact widget with social media integration
-  - Card-based layout for services and courses
-## Sections Overview
-  - Hero: Introduction to Marina Smit and her mission
-  - Services: 9 comprehensive astrology services including destiny analysis, horoscopes, relationships, finance, health, and more
-  - Education: Two main courses - Vedic Astrology fundamentals and Bhava-Bhavam technique
-  - Astro Club: Community for astrology enthusiasts with various topics
-  - Testimonials: Client reviews and feedback
-  - Contact: Social media links and contact information
-## Interactive Elements
-  - Mobile-responsive navigation menu
-  - Dropdown toggle for course details
-  - Hover animations on service cards
-  - Smooth scrolling between sections
-  - Floating contact button that expands to show social links
-  - Intersection Observer animations for scroll-triggered effects
+ - Clean and elegant styling with consistent typography  
+ - Well-spaced layout and readable content blocks  
+ - Aesthetic responsiveness — looks good on mobile, tablet, desktop  
+ - Sectioned layout: services, courses, testimonials, contact  
+
+---
+
+
+## Live Demo
+[View Project](https://apacy.github.io/Astrology-Website/)
+
+---
+
+
+Built as first comercial project  [View Project](https://marinasmit.com.ua)
