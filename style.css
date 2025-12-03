@@ -353,6 +353,59 @@
     width: 60px;
     height: 60px;
   }
+  /* Контактная форма */
+  .contact-container{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .contact-left{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+
+  .contact-inputs{
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left:25px;
+    font-weight: 300;
+    color:#666;
+    border-radius: 50px;
+  }
+
+  .contact-left textarea{
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+  }
+
+  .contact-left button{
+    display: block;
+    margin: 20px auto 0;
+    width: 20vw;
+  }
+
+  .contact-inputs:focus{
+    border: 2px solid var(--midnight);
+  }
+  .contact-inputs::placeholder{
+    color: #a9a9a9;
+  }
+  @media (max-width:800px){
+    .contact-inputs{
+      width:80vw;
+    }
+    .contact-left button{
+      width: auto;
+    }
+  }
+  /* Контактная форма */
   
   .contact-btn img {
     width: 100%;
@@ -407,8 +460,15 @@
     align-items: center;
     justify-content: center; 
     gap: 15px;
-    margin: 20px;
+    margin-bottom: 20px;
     width: 100%; 
+    padding-top:80px;
+  }
+  @media (max-width:800px){
+    .contact-container{
+      margin-top:0;
+      padding-top:0 ;
+    }
   }
   
   /* Кнопки социальных сетей */

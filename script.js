@@ -69,3 +69,24 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+
+const form = document.getElementById('contact-form');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault(); // отменяем стандартную отправку формы
+
+    const formData = new FormData(form);
+
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData
+    });
+
+    if (response.ok) {
+      form.reset(); // очищаем ВСЕ поля
+      alert("Заявка отправленна!"); // можно убрать
+    } else {
+      alert("Произошла ошибка. Попробуйте ещё раз.");
+    }
+  });
+

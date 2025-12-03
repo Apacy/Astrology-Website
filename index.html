@@ -25,7 +25,7 @@
         <a href="#edu">Обучение</a>
         <a href="#testimonials">Отзывы</a>
         <a href="#contact">Контакты</a>
-        
+
       </nav>
       <div class="burger" id="burger">&#9776;</div>
     </div>
@@ -183,7 +183,7 @@
   <section id="services">
     <div class="container">
       <h2 class="section-title" id="edu">Обучение</h2>
-      <div class="services-grid" >
+      <div class="services-grid">
         <div class="service" id="course-card">
           <h3>Основы Ведической Астрологии Джйотиш (OVA)</h3>
           <p>С радостью приглашаю Вас на обучение в 1-й модуль курса</p>
@@ -261,7 +261,8 @@
             <ul>
               <li>Как работает принцип «дом от дома» и почему он раскрывает глубинные смыслы гороскопа.</li>
               <li>Как через технику Бхават-Бхавам понять истинное значение каждого дома.</li>
-              <li>Как использовать метод для анализа ключевых сфер жизни: отношений, финансов, карьеры и духовных задач.</li>
+              <li>Как использовать метод для анализа ключевых сфер жизни: отношений, финансов, карьеры и духовных задач.
+              </li>
               <li>Практические интерпретации для всех 12 домов.</li>
             </ul>
 
@@ -293,7 +294,7 @@
   <section id="services">
     <div class="container">
       <h2 class="section-title">Астро Клуб Джйотиш</h2>
-      <div class="services-grid" >
+      <div class="services-grid">
         <div class="service" id="course-card">
           <h3>Для кого создан клуб?</h3>
 
@@ -303,7 +304,7 @@
             <li>Для всех, кто любит астрологию и хочет глубже её понять</li>
           </ul>
 
-          <p>Это место для обмена опытом, живого общения, разбора карт и поиска ответов на сложные вопросы.  
+          <p>Это место для обмена опытом, живого общения, разбора карт и поиска ответов на сложные вопросы.
             Здесь астрология становится медитацией и путеводной нитью вашей души</p>
 
           <h3>Что ждёт Вас в клубе?</h3>
@@ -334,7 +335,7 @@
               <li>Чтение священных писаний - прикосновение к мудрости Вед</li>
               <li>Анализ астрологических книг - коллективное изучение и практика</li>
             </ul>
-          
+
             <h3>Почему стоит присоединиться?</h3>
             <ul>
               <li>Вы углубите понимание астрологии через практику</li>
@@ -342,15 +343,15 @@
               <li>Сможете задать свои вопросы и получить поддержку</li>
               <li>Станете частью живого сообщества, где астрология становится образом жизни</li>
             </ul>
-          
+
+          </div>
+
+
         </div>
-        
-        
       </div>
-    </div>
-    <div class="center-wrapper">
-      <a href="https://t.me/+HmBzGn75s6hiZmY6" target="_blank" class="btn" >Присоединиться</a>
-    </div>
+      <div class="center-wrapper">
+        <a href="https://t.me/+HmBzGn75s6hiZmY6" target="_blank" class="btn">Присоединиться</a>
+      </div>
   </section>
 
 
@@ -368,18 +369,33 @@
         <em>- Ирина и Олег</em>
       </div>
       <div class="center-wrapper">
-        <a href="https://t.me/+aRnIA6fRqTthNDVi" target="_blank" class="btn" >Все отзывы</a>
+        <a href="https://t.me/+aRnIA6fRqTthNDVi" target="_blank" class="btn">Все отзывы</a>
       </div>
     </div>
-    
+
   </section>
 
   <section id="contact">
     <div class="container">
       <h2 class="section-title">Свяжитесь со мной</h2>
-      <p style="text-align: center; max-width: 600px; margin: auto;">
-        Напишите на почту <b> mbeloved1975@gmail.com</b> или в социальные сети
-      </p>
+      <div class="contact-container">
+        <form id="contact-form"action="https://api.web3forms.com/submit" method="POST" class="contact-left"  >
+          <input type="hidden" name="access_key" value="d62324a4-e96c-41b1-988b-c3e5bf6cae13">
+
+          <input type="text" name="name" placeholder="Имя" class="contact-inputs" required>
+          <input type="email" name="email" placeholder="Ваша почта example@mail.com" class="contact-inputs" required>
+          <div>
+          <input type="radio" id="consultation" name="service" value="Консультация" checked>
+            <label for="Консультация">Консультация</label>
+          </div>
+          <div>
+            <input type="radio" id="education" name="service" value="Обучение">
+              <label for="Обучение">Обучение</label>
+            </div>
+          <textarea name="message" placeholder="Дополнительные коментарии" class="contact-inputs" maxlength="300" required></textarea>
+         <button type="submit" class="btn">Отправить</button>
+      </form>
+      </div>
       <!-- Кнопки социальных сетей -->
       <div class="social-buttons">
         <a href="https://t.me/MarynaSmit" target="_blank" class="social-button">
@@ -424,6 +440,6 @@
     <p>© 2025 Marina Smit | Все права защищены</p>
   </footer>
   <script src="script.js"></script>
-</body>
+  </body>
 
 </html>
