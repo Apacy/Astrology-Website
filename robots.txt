@@ -1,0 +1,19 @@
+# robots.txt для marinasmit.com.ua (SEO-оптимизированный)
+
+# Правила для всех поисковых роботов
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /wp-includes/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /*?*  # запрет индексации URL с параметрами (чтобы избежать дублирования)
+
+# Разрешаем доступ к CSS, JS и изображениям для корректного рендеринга страниц
+Allow: /wp-content/uploads/
+Allow: /wp-content/themes/
+Allow: /wp-content/plugins/
+
+# Sitemap для поисковых систем
+Sitemap: https://marinasmit.com.ua/sitemap.xml
