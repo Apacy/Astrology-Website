@@ -615,6 +615,26 @@
       margin-top: 1.5rem;
     }
   }
+  .thank-you-body{
+    background-color: var(--rose);
+    background-image: url("image/service-bcground.PNG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-blend-mode: overlay;
+    font-weight: 300;
+  }
+
+  .thank-you{
+    background-color: var(--light-rose);
+    margin: 15% auto;
+    width: 50%;
+    border: 2px solid green;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+  }
   
   @media (max-width: 480px) {
   .hero-content h1 {
