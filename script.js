@@ -70,12 +70,12 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-// Reset contact form
-window.addEventListener("load", () => {
-  const form = document.getElementById("contact-form");
-  if (form) {
-      form.reset(); 
-  }
-});
+// // Reset contact form
+// window.addEventListener("load", () => {
+//   const form = document.getElementById("contact-form");
+//   if (form) {
+//       form.reset(); 
+//   }
+// });
 
 
