@@ -636,6 +636,11 @@
     text-align: center;
   }
   
+  .thank-you p > a {
+    font-size: 15px;
+    color:#412402;
+  }
+  
   @media (max-width: 480px) {
   .hero-content h1 {
   font-size: 1.5rem;
