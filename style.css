@@ -184,10 +184,20 @@
   /* ================================
      Услуги
      ================================ */
-  .services-grid {
+  .services-card{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   gap: 2rem;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
+  }
+  .service-top {
+    grid-column: 1 / -1;
+    max-width:600px;
+    justify-self: center;
   }
   
   .service {
@@ -629,7 +639,7 @@
   
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: center;  
   }
   
 
