@@ -6,301 +6,270 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Гармония звёзд, гороскопы и глубинное самопознание с астрологом Мариной.">
   <title>Астролог Марина — Путь к себе через звёзды</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
-
   <!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '2227666094419935');
-  fbq('track', 'PageView');
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2227666094419935');
+    fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=2227666094419935&ev=PageView&noscript=1"
-  /></noscript>
+      src="https://www.facebook.com/tr?id=2227666094419935&ev=PageView&noscript=1" /></noscript>
   <!-- End Meta Pixel Code -->
 </head>
 
-<section>
+<body>
+
+  <!-- ================================
+       HEADER
+       ================================ -->
   <header>
     <div class="container header-inner">
       <div class="logo">
         <img src="./image/logoms.svg" alt="logo">
-        Marina Smit
+        <a href="index.html" class="main-page-link-style">Marina Smit</a>
       </div>
-
       <nav class="nav">
-        <a href="#services">Услуги</a>
-        <a href="#edu">Обучение</a>
-        <a href="#testimonials">Отзывы</a>
-        <a href="#contact">Контакты</a>
-
+        <a href="index.html#edu">Обучение</a>
+        <a href="index.html#services">Консультации</a>
+        <a href="index.html#testimonials">Отзывы</a>
+        <a href="index.html#contact">Контакты</a>
       </nav>
       <div class="burger" id="burger">&#9776;</div>
     </div>
-
-
     <div class="mobile-nav" id="mobileNav">
-      <a href="#services">Услуги</a>
-      <a href="#edu">Обучение</a>
-      <a href="#testimonials">Отзывы</a>
-      <a href="#contact">Контакты</a>
+      <a href="index.html#edu">Обучение</a>
+      <a href="index.html#services">Консультации</a>
+      <a href="index.html#testimonials">Отзывы</a>
+      <a href="index.html#contact">Контакты</a>
     </div>
   </header>
-  <section class="hero">
-    <div class="container hero-content">
-      <h1>Ведический астролог</h1>
-      <p><b>Я — Марина Смит,</b> практикующий астролог, основатель и преподователь Академии ведической
-        астрологии "<b>DeviAcademy</b>"<br><br>
-        <b>Моя миссия</b> — помочь тебе услышать свой внутренний голос, увидеть истинные таланты и найти
-        ответы через язык звёзд.<br><br>
 
-        <b>Каждый гороскоп</b> — это книга твоей жизни и души.<br>
-        Я здесь, чтобы помочь тебе её прочитать.<br><br>
-
-        <b>ТВОЙ ГОРОСКОП. ТВОЯ ИСТОРИЯ. ТВОЯ СИЛА БЫТЬ СОБОЙ.</b>
-        С любовью, <b>Marina Smit</b>
+  <!-- ================================
+       HERO
+       ================================ -->
+  <section class="hero" id="main-page">
+    <div class="hero-content">
+      <div class="hero-tag">Ведическая астрология · Джйотиш</div>
+      <h1 class="hero-module-title">
+        Астролог<br>
+        <em>Марина Смит</em>
+      </h1>
+      <p class="hero-subtitle">DeviAcademy — Академия Ведической Астрологии</p>
+      <p>
+        Практикующий астролог, основатель и преподаватель. Моя миссия — помочь тебе услышать свой внутренний голос,
+        увидеть истинные таланты и найти ответы через язык звёзд.<br><br>
+        Каждый гороскоп — это книга твоей жизни и души. Я здесь, чтобы помочь тебе её прочитать.
       </p>
-      <a href="#contact" class="btn">Записаться</a>
+      <div class="hero-actions">
+        <a href="#contact" class="btn" style="margin-bottom: 20px">Записаться</a>
+      </div>
     </div>
     <div class="hero-image">
-      <img style="margin: 2rem 0 0 0" src="image/hero.PNG" alt="Астролог Марина">
+      <img src="image/hero.PNG" alt="Астролог Марина">
     </div>
   </section>
 
-  
-
-  <section id="services">
+  <!-- ================================
+       ОБУЧЕНИЕ
+       ================================ -->
+  <section class="section" id="edu">
     <div class="container">
-      <h2 class="section-title" id="edu">Обучение</h2>
-      
+      <p class="section-label">Академия DeviAcademy</p>
+      <h2 class="section-title">Обучение</h2>
+
       <div class="services-grid">
 
+        <!-- Модуль 0 -->
         <div class="service service-top">
-          <h3>Базовый мини-курс</h3>
-          <p>С радостью приглашаю Вас на обучение базовому курсу по ведической астрологии
-            Анализ и трактовка гороскопа рождения</p>
-
-          <h3>Что вас ждёт:</h3>
-          <ul>
-            <li>Системное изучение основ Джйотиш</li>
-            <li>Пошаговый алгоритм анализа гороскопа</li>
-            <li>Теория + практические разборы карт</li>
-            <li>Глубокое понимание домов, планет и знаков</li>
-          </ul>
-          <h3>Ключевые результаты:</h3>
-          <ul>
-            <li>Научитесь уверенно читать гороскоп рождения</li>
-            <li>Поймёте логику причин и следствий в карте</li>
-            <li>Сможете делать целостные и обоснованные трактовки</li>
-            <li>Получите прочный фундамент для дальнейшего изучения Джйотиш</li>
-          </ul>
-          <br>
-        <div class="training">
-          <button class="dropdown-toggle">Подробнее о мини-курсе 
-            <span class="dropdown-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 9L12 15L18 9"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </button>
-          <div class="dropdown-content">
-            <h3>Программа курса</h3>
-            <ul>
-              <li>Философия и фундаментальные основы Джйотиш.</li>
-              <li>Виды астрологических карт.</li>
-              <li>Системы домов.</li>
-              <li>Планеты, знаки и управители домов.</li>
-              <li>Планеты в домах и знакахж.</li>
-              <li>Ось Раху–Кету.</li>
-              <li>Йоги и соединения планет.</li>
-              <li>Упайи и способы коррекции.</li>
-              <li>Последовательный алгоритм анализа натальной карты.</li>
-            </ul>
-
-            <h3>Курс будет полезен Вам, если Вы:</h3>
-            <ul>
-              <li>Хотите выстроить системное понимание ведической астрологии.</li>
-              <li>Планируете консультировать или уже работаете с людьми.</li>
-              <li>Стремитесь к более глубокой и уверенной интерпретации карт.</li>
-              <li>Хотите осознанно и точно анализировать собственный гороскоп.</li>
-            </ul>
-
-            <h3>Что вы сможете по окончанию:</h3>
-            <ul>
-              <li>Уверенно ориентируетесь в структуре гороскопа рождения.</li>
-              <li>Понимаете логику его последовательного анализа.</li>
-              <li>Умеете делать целостные и аргументированные трактовки.</li>
-              <li>Получаете надёжную основу для дальнейшего углубления в Джйотиш.</li>
-            </ul>
-
-            <a href="./study-plan/miniova.pdf" target="_blank">
-              <button class="btn">Подробный план уроков</button>
-            </a>
-          </div>
-        </div>
-        </div>
-
-
-        <div class="service" id="course-card">
-          <h3>Курс Основ Ведической Астрологии Джйотиш (OVA)</h3>
-          <p>С радостью приглашаю Вас на обучение в 1-й модуль курса</p>
-
-          <h3>Что вас ждёт:</h3>
-          <ul>
-            <li>50 уроков + 50 практик (≈ 100 академических часов)</li>
-            <li>Теория + практика в балансе</li>
-            <li>Поддержка преподавателя и все материалы</li>
-          </ul>
-          <h3>Ключевые результаты:</h3>
-          <ul>
-            <li>Научитесь читать гороскопы с нуля</li>
-            <li>Освоите работу с профессиональными программами (Jagannatha Hora, Astro Expert)</li>
-          </ul>
-
-          <p><b>Стоимость: 500$</b> (возможна рассрочка)<br>
-            Длительность урока: <b>1 - 1,5 ч</b>; практика - <b>1,5 ч</b><br>
-            <b>Это путь к пониманию себя и помощи другим.</b>
+          <img class="square-photo" src="./image/module0.png" alt="Фото к Модулю 0">
+          <h3>Модуль 0 — Вводный Мини-Курс</h3>
+          <p class="hero-subtitle" style="margin: 0.4rem 0 0.8rem;">Мини-курсы · Для тех, кто хочет заложить фундамент</p>
+          <p>
+            Хотите «потрогать» астрологию руками, но не готовы к долгому погружению? Начните с нулевого модуля.
+            Это ваш быстрый старт: вы перестанете путаться в знаках и домах и научитесь видеть базовые взаимосвязи в гороскопе.
           </p>
-        <div class="training">
-          <button class="dropdown-toggle">Подробнее о курсе 
-            <span class="dropdown-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 9L12 15L18 9"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </button>
-          <div class="dropdown-content">
-            <h3>Почему этот курс особенный</h3>
-            <ul>
-              <li>Вы познакомитесь с историей и философией Джйотиш, целями и этикой астролога.</li>
-              <li>Изучите гуны и варны, чтобы глубже понимать природу человека и предназначение.</li>
-              <li>Разберёте четыре цели жизни и виды кармы - основу духовного и материального пути.</li>
-              <li>Научитесь работать с астрологическими картами и правильно строить гороскоп.</li>
-              <li>Освоите работу с профессиональными программами (Jagannatha Hora, Astro Expert и др.)</li>
-              <li>Подробно изучите 12 домов гороскопа и их значение в жизни человека.</li>
-              <li>Получите знания о планетах (грахах): их циклы, влияние и проявления.</li>
-              <li>Разберёте знаки зодиака (Раши), их характеристики и управителей.</li>
-              <li>Изучите, как планеты проявляются в домах и знаках, их результаты и влияния.</li>
-              <li>Поймёте глубину оси Раху-Кету и кармических узлов судьбы.</li>
-              <li>Научитесь определять аспекты планет и положение хозяев домов.</li>
-            </ul>
 
-            <h3>Что вы сможете по окончанию:</h3>
-            <ul>
-              <li>Составлять и читать natal-карты; находить ключи судьбы и предназначения.</li>
-              <li>Определять планетные циклы и прогнозировать существенные периоды.</li>
-              <li>Проводить практические консультации: слушать, формулировать рекомендации, хранить этику.</li>
-              <li>Использовать астрологию как инструмент самопознания и помощи другим.</li>
-            </ul>
-
-            <a href="./study-plan/OVA.pdf" target="_blank">
-              <button class="btn">Подробный план уроков</button>
-            </a>
+          <div class="training" style="margin-top: 1.5rem;">
+            <div class="module-buttons">
+              <a href="m0-doma.html" class="module-btn">Дома, Планеты, Знаки<br><small>11 уроков</small></a>
+              <a href="m0-pokazateli.html" class="module-btn">Показатели планет<br><small>9 уроков</small></a>
+              <a href="m0-analiz.html" class="module-btn">Полный анализ гороскопа<br><small>30 уроков</small></a>
+            </div>
+            <p style="font-size: 0.8rem; color: #867468; margin-top: 1rem; font-weight: 300;">
+              * Мы рекомендуем проходить модули последовательно. Если вы уже владеете базой — напишите нам, и мы поможем определить ваш уровень.
+            </p>
           </div>
         </div>
-        </div>
 
+        <!-- Модуль 1 -->
         <div class="service">
-          <h3>Курс по Раскрытию Техники Бхават-Бхавам</h3>
-          <p>С радостью приглашаю Вас на обучение курсу «Бхават-Бхавам»</p>
-
-          <h3>Что вас ждёт:</h3>
-          <ul>
-            <li>6 интенсивных занятий</li>
-            <li>Живые лекции + записи</li>
-            <li>Практика на примерах карт</li>
-            <li>Подробные материалы для самостоятельной работы</li>
-          </ul>
-          <h3>Ключевые результаты:</h3>
-          <ul>
-            <li>Поймёте принцип «дом от дома»</li>
-            <li>Научитесь глубже анализировать каждый дом гороскопа</li>
-            <li>Сможете применять метод в отношениях, финансах, карьере и духовных задачах</li>
-          </ul>
-          <br>
-        <div class="training">
-          <button class="dropdown-toggle">Подробнее о курсе 
-            <span class="dropdown-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 9L12 15L18 9"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </button>
-          <div class="dropdown-content">
-            <h3>Что изучим на курсе:</h3>
-            <ul>
-              <li>Как работает принцип «дом от дома» и почему он раскрывает глубинные смыслы гороскопа.</li>
-              <li>Как через технику Бхават-Бхавам понять истинное значение каждого дома.</li>
-              <li>Как использовать метод для анализа ключевых сфер жизни: отношений, финансов, карьеры и духовных задач.
-              </li>
-              <li>Практические интерпретации для всех 12 домов.</li>
-            </ul>
-
-            <h3>Для кого подходит курс:</h3>
-            <ul>
-              <li>Для начинающих астрологов — укрепить базу знаний.</li>
-              <li>Для практикующих специалистов — увидеть новые взаимосвязи в гороскопе.</li>
-              <li>Для всех, кто ищет ясность и хочет использовать астрологию в жизни.</li>
-            </ul>
-
-            <h3>Что вы сможете по окончанию:</h3>
-            <ul>
-              <li>Уверенно применять технику Бхават-Бхавам.</li>
-              <li>Интерпретировать причинно-следственные связи в гороскопе.</li>
-              <li>Смотреть на карту с более точной и глубокой перспективой.</li>
-              <li>Использовать полученные знания для самопознания и помощи другим.</li>
-            </ul>
-
-            <p><b>Важно:</b> если вы не сможете присутствовать онлайн, запись будет доступна на Google Диске.</p>
-          </div>
+          <img class="square-photo" src="./image/module1.png" alt="Фото к Модулю 1">
+          <h3>Модуль 1 — Углублённый Профессионал</h3>
+          <p class="hero-subtitle" style="margin: 0.4rem 0 0.8rem;">База + Расширение · Для тех, кто идёт в профессию</p>
+          <p>
+            Если вы уже знакомы с основами или прошли нулевой модуль — добро пожаловать. Здесь мы закладываем системное
+            мышление астролога: от полного анализа гороскопа до сложных связок между домами и планетами.
+          </p>
+          <div class="training" style="margin-top: 1.5rem;">
+            <div class="module-buttons">
+              <a href="m1-horoscope.html" class="module-btn">Полный анализ гороскопа<br><small>45 уроков</small></a>
+              <!-- <a href="#" class="module-btn">Базовый <br>Блок · I<br><small>9 уроков</small></a> -->
+              <!-- <a href="#" class="module-btn">Базовый Блок · II<br><small>30 уроков</small></a> -->
+            </div>
+            <p style="font-size: 0.8rem; color: #867468; margin-top: 1rem; font-weight: 300;">
+              * Мы рекомендуем проходить модули последовательно. Если вы уже владеете базой — напишите нам, и мы поможем определить ваш уровень.
+            </p>
           </div>
         </div>
+
+        <!-- Модуль 2 -->
+        <div class="service">
+          <img class="square-photo" src="./image/module2.png" alt="Фото к Модулю 2">
+          <h3>Модуль 2 — Профессионал Профильный</h3>
+          <p class="hero-subtitle" style="margin: 0.4rem 0 0.8rem;">Мастерство · Для практикующих специалистов</p>
+          <p>
+            Для тех, кто прошёл базу (Модуль 1) и хочет заявить о себе как об эксперте. Только профильные инструменты:
+            кармический анализ, профориентация, финансы, детская астрология, синастрия и другие направления.
+          </p>
+          <!-- <div class="training" style="margin-top: 1.5rem;">
+            <div class="module-grid-4x3">
+              <a href="#" class="module-btn">Кармический анализ<small>Раху-Кету, прошлые жизни</small></a>
+              <a href="#" class="module-btn">Отношения<small>Синастрия, брак</small></a>
+              <a href="#" class="module-btn">Профессия<small>Призвание, карьера</small></a>
+              <a href="#" class="module-btn">Финансы<small>Доходы, инвестиции</small></a>
+              <a href="#" class="module-btn">Детская астрология<small>Таланты, воспитание</small></a>
+              <a href="#" class="module-btn">Здоровье<small>Аюрведа, доши</small></a>
+            </div>
+            <button class="dropdown-toggle" style="margin-top: 1rem;">Больше блоков
+              <span class="dropdown-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="dropdown-content">
+              <div class="module-grid-4x3">
+                <a href="#" class="module-btn">Миграция<small>Переезды, эмиграция</small></a>
+                <a href="#" class="module-btn">Мухурта<small>Выбор времени</small></a>
+                <a href="#" class="module-btn">Духовное развитие<small>Карма, предназначение</small></a>
+                <a href="#" class="module-btn">Недвижимость<small>Дом, жильё</small></a>
+                <a href="#" class="module-btn">Транзиты<small>Прогнозы, периоды</small></a>
+                <a href="#" class="module-btn">Ректификация<small>Точное время рождения</small></a>
+              </div>
+            </div>
+            <p style="font-size: 0.8rem; color: #867468; margin-top: 1rem; font-weight: 300;">
+              * Мы рекомендуем проходить модули последовательно. Если вы уже владеете базой — напишите нам, и мы поможем определить ваш уровень.
+            </p>
+          </div> -->
+        </div>
+
       </div>
-      <div class="center-wrapper">
+
+      <div class="center-wrapper" style="margin-top: 2.5rem;">
         <a href="#contact" class="btn">Записаться</a>
       </div>
     </div>
   </section>
 
+  <!-- ================================
+       КОНСУЛЬТАЦИИ
+       ================================ -->
   <section id="services">
     <div class="container">
-      <h2 class="section-title">Мои услуги</h2>
-      <div class="services-card">
+      <p class="section-label">Индивидуальная работа</p>
+      <h2 class="section-title">Консультации</h2>
+
+      <div class="consult-wrapper">
+        <div class="consult-tabs" role="tablist">
+          <button class="consult-tab active" data-tab="destiny"><span class="tab-num">01</span><span class="tab-label">О предназначении</span></button>
+          <button class="consult-tab" data-tab="horoscope"><span class="tab-num">02</span><span class="tab-label">Разбор гороскопа</span></button>
+          <button class="consult-tab" data-tab="prof"><span class="tab-num">03</span><span class="tab-label">Профессия</span></button>
+          <button class="consult-tab" data-tab="relations"><span class="tab-num">04</span><span class="tab-label">Отношения</span></button>
+          <button class="consult-tab" data-tab="finance"><span class="tab-num">05</span><span class="tab-label">Финансы</span></button>
+          <button class="consult-tab" data-tab="health"><span class="tab-num">06</span><span class="tab-label">Здоровье</span></button>
+          <button class="consult-tab" data-tab="migration"><span class="tab-num">07</span><span class="tab-label">Миграция</span></button>
+          <button class="consult-tab" data-tab="muhurta"><span class="tab-num">08</span><span class="tab-label">Мухурта</span></button>
+          <button class="consult-tab" data-tab="rectification"><span class="tab-num">09</span><span class="tab-label">Ректификация</span></button>
+        </div>
+        <div class="consult-panels">
+          <div class="consult-panel active" id="panel-destiny">
+            <div class="panel-header"><div class="panel-num">01</div><div><h3 class="panel-title">О предназначении</h3><p class="panel-tagline">Кармические задачи · Призвание · Таланты</p></div></div>
+            <div class="panel-preview"><span class="preview-tag">Кармические задачи души</span><span class="preview-tag">Призвание и смысл</span><span class="preview-tag">Уникальные способности</span></div>
+            <div class="panel-full"><ul class="panel-list"><li>Кармические задачи души</li><li>Призвание и смысл</li><li>Препятствия и внутренние конфликты</li><li>Уникальные способности</li><li>Возможности от рождения</li><li>Скрытые или не раскрытые таланты</li><li>О желаниях и амбициях человека</li><li>Возможность чувствовать себя реализованным в жизни</li></ul></div>
+            <button class="panel-expand-btn"><span class="expand-text">Подробнее</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="consult-panel" id="panel-horoscope">
+            <div class="panel-header"><div class="panel-num">02</div><div><h3 class="panel-title">Комплексный разбор гороскопа</h3><p class="panel-tagline">Полная картина личности · Потенциал · Путь</p></div></div>
+            <div class="panel-preview"><span class="preview-tag">Общая характеристика личности</span><span class="preview-tag">Предназначение и путь души</span><span class="preview-tag">Таланты и ресурсы</span></div>
+            <div class="panel-full"><ul class="panel-list"><li>Общая характеристика личности</li><li>Предназначение и путь души</li><li>Таланты, потенциал и ресурсы</li><li>Сфера отношений и партнёрства</li><li>Финансы и работа</li><li>Психология и внутренние процессы</li><li>Здоровье и энергия</li><li>Карма и родовые задачи</li></ul></div>
+            <button class="panel-expand-btn"><span class="expand-text">Подробнее</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="consult-panel" id="panel-prof">
+            <div class="panel-header"><div class="panel-num">03</div><div><h3 class="panel-title">Профессиональная деятельность</h3><p class="panel-tagline">Карьера · Доходы · Профориентация</p></div></div>
+            <div class="panel-preview"><span class="preview-tag">Перспективы роста в карьере</span><span class="preview-tag">Профориентация абитуриентов</span><span class="preview-tag">Статус и авторитет</span></div>
+            <div class="panel-full"><ul class="panel-list"><li>Перспективы роста в карьере</li><li>Перечень деятельности, которая будет успешной</li><li>Профориентация абитуриентов</li><li>Возможности доходов от деятельности</li><li>Статус, авторитет</li><li>На что обратить внимание в работе, чтобы повысить продуктивность</li></ul></div>
+            <button class="panel-expand-btn"><span class="expand-text">Подробнее</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="consult-panel" id="panel-relations">
+            <div class="panel-header"><div class="panel-num">04</div><div><h3 class="panel-title">Отношения и личная жизнь</h3><p class="panel-tagline">Совместимость · Партнёрство · Психология</p></div></div>
+            <div class="panel-preview"><span class="preview-tag">Совместимость в браке</span><span class="preview-tag">Психология отношений</span><span class="preview-tag">Периоды встречи и брака</span></div>
+            <div class="panel-full"><ul class="panel-list"><li>Совместимость в браке</li><li>Бизнес-партнёрство</li><li>Пути и методы решения проблем в браке</li><li>Психология отношений</li><li>Уроки любви и путь развития</li><li>Периоды встречи, брака, трансформаций</li><li>Особенности личности партнёра</li></ul></div>
+            <button class="panel-expand-btn"><span class="expand-text">Подробнее</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="consult-panel" id="panel-finance">
+            <div class="panel-header"><div class="panel-num">05</div><div><h3 class="panel-title">Финансы и доходы</h3><p class="panel-tagline">Денежный потенциал · Блоки · Стратегии</p></div></div>
+            <div class="panel-preview"><span class="preview-tag">Денежный потенциал по карте</span><span class="preview-tag">Причина маленького дохода</span><span class="preview-tag">Периоды финансового роста</span></div>
+            <div class="panel-full"><ul class="panel-list"><li>Денежные потоки</li><li>Виды доходов</li><li>Финансовая поддержка</li><li>Причина маленького дохода</li><li>Как увеличить прибыль</li><li>Денежный потенциал по натальной карте</li><li>Способы заработка и бизнес-направления</li><li>Денежные блоки и установки</li><li>Периоды финансовой активности и роста</li><li>Рекомендации и стратегии</li></ul></div>
+            <button class="panel-expand-btn"><span class="expand-text">Подробнее</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="consult-panel" id="panel-health">
+            <div class="panel-header"><div class="panel-num">06</div><div><h3 class="panel-title">Здоровье</h3><p class="panel-tagline">Энергия · Аюрведа · Циклы восстановления</p></div></div>
+            <div class="panel-preview"><span class="preview-tag">Общий энергетический потенциал</span><span class="preview-tag">Слабые места и уязвимости</span><span class="preview-tag">Расчёт пракрити</span></div>
+            <div class="panel-full"><ul class="panel-list"><li>Общий энергетический потенциал</li><li>Слабые места и уязвимости</li><li>Психоэмоциональное здоровье</li><li>Циклы здоровья и кризисные периоды</li><li>Поддержка и восстановление</li><li>Определение дисбаланса доши</li><li>Расчёт пракрити</li><li>Рекомендации питания по дошам</li></ul></div>
+            <button class="panel-expand-btn"><span class="expand-text">Подробнее</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="consult-panel" id="panel-migration">
+            <div class="panel-header"><div class="panel-num">07</div><div><h3 class="panel-title">Миграция</h3><p class="panel-tagline">Переезды · Адаптация · Сравнение стран</p></div></div>
+            <div class="panel-preview"><span class="preview-tag">Потенциал к эмиграции</span><span class="preview-tag">Анализ времени переезда</span><span class="preview-tag">Сравнение стран и городов</span></div>
+            <div class="panel-full"><ul class="panel-list"><li>Потенциал к эмиграции</li><li>Отношения с иностранцами и иностранными государствами</li><li>Путешествия</li><li>Паломничество</li><li>Анализ времени переезда</li><li>Рекомендации по адаптации и вектору развития</li><li>Сравнение стран и городов</li></ul></div>
+            <button class="panel-expand-btn"><span class="expand-text">Подробнее</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="consult-panel" id="panel-muhurta">
+            <div class="panel-header"><div class="panel-num">08</div><div><h3 class="panel-title">Мухурта — Подбор благоприятного времени</h3><p class="panel-tagline">Бизнес · Свадьба · Важные решения</p></div></div>
+            <div class="panel-preview"><span class="preview-tag">Подбор времени именно для вас</span><span class="preview-tag">Открытие бизнеса</span><span class="preview-tag">Купля и продажа недвижимости</span></div>
+            <div class="panel-full"><ul class="panel-list"><li>Подбор времени, которое подходит именно тебе</li><li>Открытие и регистрация бизнеса</li><li>Поездка, путешествие</li><li>Свадьба</li><li>Покупка техники и автомобиля</li><li>Купля и продажа недвижимости</li></ul></div>
+            <button class="panel-expand-btn"><span class="expand-text">Подробнее</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="consult-panel" id="panel-rectification">
+            <div class="panel-header"><div class="panel-num">09</div><div><h3 class="panel-title">Ректификация</h3><p class="panel-tagline">Точное время рождения · Финальный гороскоп</p></div></div>
+            <div class="panel-preview"><span class="preview-tag">Восстановление времени рождения</span><span class="preview-tag">Финальный вариант гороскопа</span><span class="preview-tag">Рекомендации по натальной карте</span></div>
+            <div class="panel-full"><ul class="panel-list"><li>Восстановление точного времени рождения человека</li><li>Финальный вариант гороскопа</li><li>Рекомендация по натальной карте</li><li>Возможность проходить консультации, строить годовой гороскоп, личные периоды и прогнозы</li></ul></div>
+            <button class="panel-expand-btn"><span class="expand-text">Подробнее</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:none"><div class="services-card">
+
         <div class="service" id="destiny">
           <h3 class="service-title">О предназначении
             <div class="accordion-icon-container">
               <span class="accordion-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 9L12 15L18 9"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
             </div>
@@ -313,25 +282,20 @@
             <li>возможности от рождения</li>
             <li>скрытые или не раскрытые таланты</li>
             <li>о желаниях и амбициях человека</li>
-            <li>возможность чувствовать себя реализованым в жизни</li>
+            <li>возможность чувствовать себя реализованным в жизни</li>
           </ul>
         </div>
+
         <div class="service" id="horoscope">
           <h3 class="service-title">Комплексный разбор гороскопа
             <div class="accordion-icon-container">
               <span class="accordion-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 9L12 15L18 9"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
             </div>
           </h3>
-
           <ul>
             <li>общая характеристика личности</li>
             <li>предназначение и путь души</li>
@@ -343,17 +307,13 @@
             <li>карма и родовые задачи</li>
           </ul>
         </div>
+
         <div class="service" id="prof_activity">
           <h3 class="service-title">Профессиональная деятельность
             <div class="accordion-icon-container">
               <span class="accordion-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 9L12 15L18 9"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
             </div>
@@ -367,17 +327,13 @@
             <li>на что обратить внимание в работе, чтобы повысить продуктивность</li>
           </ul>
         </div>
+
         <div class="service" id="relations">
           <h3 class="service-title">Отношения и Личная жизнь
             <div class="accordion-icon-container">
               <span class="accordion-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 9L12 15L18 9"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
             </div>
@@ -392,17 +348,13 @@
             <li>особенности личности партнёра</li>
           </ul>
         </div>
+
         <div class="service" id="finance">
           <h3 class="service-title">Финансы и Доходы
             <div class="accordion-icon-container">
               <span class="accordion-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 9L12 15L18 9"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
             </div>
@@ -420,17 +372,13 @@
             <li>рекомендации и стратегии</li>
           </ul>
         </div>
+
         <div class="service" id="health">
           <h3 class="service-title">Здоровье
             <div class="accordion-icon-container">
               <span class="accordion-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 9L12 15L18 9"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
             </div>
@@ -440,30 +388,26 @@
             <li>слабые места и уязвимости</li>
             <li>психоэмоциональное здоровье</li>
             <li>циклы здоровья и кризисные периоды</li>
-            <li>поддержка и востановление</li>
+            <li>поддержка и восстановление</li>
             <li>определение дисбаланса доши</li>
             <li>расчёт пракрити</li>
             <li>рекомендации питания по дошам</li>
           </ul>
         </div>
+
         <div class="service" id="migration">
           <h3 class="service-title">Миграция
             <div class="accordion-icon-container">
               <span class="accordion-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 9L12 15L18 9"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
             </div>
           </h3>
           <ul>
             <li>потенциал к эмиграции</li>
-            <li>отношения с иностанцами и иностранными государствами</li>
+            <li>отношения с иностранцами и иностранными государствами</li>
             <li>путешествия</li>
             <li>паломничество</li>
             <li>анализ времени переезда</li>
@@ -471,17 +415,13 @@
             <li>сравнение стран и городов</li>
           </ul>
         </div>
+
         <div class="service" id="muhurta">
-          <h3 class="service-title">Мухурта или <br>Подбор благоприятного времени
+          <h3 class="service-title">Мухурта — Подбор благоприятного времени
             <div class="accordion-icon-container">
               <span class="accordion-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 9L12 15L18 9"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
             </div>
@@ -489,160 +429,139 @@
           <ul>
             <li>подбор времени, которое подходит именно тебе</li>
             <li>открытие и регистрация бизнеса</li>
-            <li>поездка,путишествие</li>
+            <li>поездка, путешествие</li>
             <li>свадьба</li>
             <li>покупка техники и автомобиля</li>
             <li>купля и продажа недвижимости</li>
           </ul>
         </div>
+
         <div class="service" id="rectification">
           <h3 class="service-title">Ректификация
             <div class="accordion-icon-container">
               <span class="accordion-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 9L12 15L18 9"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
             </div>
           </h3>
           <ul>
-            <li>востановление точного времени рождения человека</li>
+            <li>восстановление точного времени рождения человека</li>
             <li>финальный вариант гороскопа</li>
             <li>рекомендация по натальной карте</li>
-            <li>возможность проходить концультации, строить годовой гороскоп, личные периоды и прогнозы</li>
+            <li>возможность проходить консультации, строить годовой гороскоп, личные периоды и прогнозы</li>
           </ul>
         </div>
+
       </div>
-      <div class="center-wrapper">
+      </div><!-- end hidden legacy -->
+      <div class="center-wrapper" style="margin-top: 2.5rem;">
         <a href="#contact" class="btn">Записаться</a>
       </div>
     </div>
   </section>
 
-  <section id="services">
-    <div class="container">
-      <h2 class="section-title">Астро Клуб Джйотиш</h2>
-      <div class="services-grid">
-        <div class="service service-top" id="course-card">
-          <h3>Для кого создан клуб?</h3>
+  <!-- ================================
+       АСТРО КЛУБ
+       ================================ -->
+  <section class="astro-club-section section">
+    <div class="astro-club-layout">
 
-          <ul>
-            <li>Для студентов курса ОВА DeviAcademy</li>
-            <li>Для практикующих астрологов</li>
-            <li>Для всех, кто любит астрологию и хочет глубже её понять</li>
-          </ul>
-
-          <p>Это место для обмена опытом, живого общения, разбора карт и поиска ответов на сложные вопросы.
-            Здесь астрология становится медитацией и путеводной нитью вашей души</p>
-
-          <h3>Что ждёт Вас в клубе?</h3>
-          <ul>
-            <li>Разборы реальных гороскопов</li>
-            <li>Интересные астрологические загадки</li>
-            <li>Живые дискуссии и обмен опытом</li>
-            <li>Ответы на практические вопросы</li>
-            <li>Поддержка и вдохновение единомышленников</li>
-          </ul>
-        <div class="training">
-          <button class="dropdown-toggle">Подробнее о Клубе 
-            <span class="dropdown-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 9L12 15L18 9"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </button>
-          <div class="dropdown-content">
-            <h3>Темы клуба</h3>
-            <ul>
-              <li>Ректификация - искусство уточнения времени рождения</li>
-              <li>Специальные лагны - ключи к разным сферам жизни</li>
-              <li>Вимшоттари даши - периоды планет, открывающие судьбу</li>
-              <li>Накшатры - архетипы и мифы, оживающие в гороскопах</li>
-              <li>Найсаргика планет - фундаментальная природа каждой грахи</li>
-              <li>Атма-карака - показатель души и кармических задач</li>
-              <li>Солнце (АДИТЬИ) - сияние личности в социуме</li>
-              <li>Психические заболевания - астрологические маркеры и забота о душе</li>
-              <li>Бхават Бхавам - секретный принцип чтения домов</li>
-              <li>Титхи Праввеша - годовые карты и прогноз на цикл</li>
-              <li>Текущие транзиты - понимание энергии настоящего момента</li>
-              <li>Аюрведа - связь планет и здоровья</li>
-              <li>Чтение священных писаний - прикосновение к мудрости Вед</li>
-              <li>Анализ астрологических книг - коллективное изучение и практика</li>
-            </ul>
-
-            <h3>Почему стоит присоединиться?</h3>
-            <ul>
-              <li>Вы углубите понимание астрологии через практику</li>
-              <li>Получите доступ к знаниям, которые редко раскрывают в открытых источниках</li>
-              <li>Сможете задать свои вопросы и получить поддержку</li>
-              <li>Станете частью живого сообщества, где астрология становится образом жизни</li>
-            </ul>
-
-          </div>
-
-        </div>
-        </div>
-      </div>
-      <div class="center-wrapper">
+      <!-- Left: identity -->
+      <div class="astro-club-identity">
+        <span class="astro-club-eyebrow">Сообщество практиков</span>
+        <h2 class="astro-club-name">Астро<em>Клуб</em>Джйотиш</h2>
+        <hr class="astro-club-rule">
+        <p class="astro-club-pitch">Место для обмена опытом, живого общения, разбора карт и поиска ответов на сложные вопросы. Здесь астрология становится медитацией и путеводной нитью вашей души.</p>
+        <span class="astro-club-audience-label">Для кого</span>
+        <ul class="astro-club-for-list">
+          <li>Студенты курса ОВА DeviAcademy</li>
+          <li>Практикующие астрологи</li>
+          <li>Все, кто любит астрологию и хочет глубже её понять</li>
+        </ul>
         <a href="https://t.me/+HmBzGn75s6hiZmY6" target="_blank" class="btn">Присоединиться</a>
       </div>
+
+      <!-- Right: content -->
+      <div class="astro-club-content">
+        <p class="astro-club-features-heading">Что вас ждёт</p>
+        <div class="astro-club-features-grid">
+          <div class="astro-club-feature-item"><strong>Разборы карт</strong>Анализ реальных гороскопов участников клуба</div>
+          <div class="astro-club-feature-item"><strong>Загадки</strong>Интересные астрологические задачи и головоломки</div>
+          <div class="astro-club-feature-item"><strong>Дискуссии</strong>Живой обмен опытом и взглядами</div>
+          <div class="astro-club-feature-item"><strong>Поддержка</strong>Ответы на практические вопросы</div>
+        </div>
+
+        <p class="astro-club-topics-heading">Темы клуба</p>
+        <div class="astro-club-topics-pills">
+          <span class="topic-pill">Ректификация</span>
+          <span class="topic-pill">Специальные лагны</span>
+          <span class="topic-pill">Вимшоттари даши</span>
+          <span class="topic-pill">Накшатры</span>
+          <span class="topic-pill">Найсаргика планет</span>
+          <span class="topic-pill">Атма-карака</span>
+          <span class="topic-pill">Солнце · Адитьи</span>
+          <span class="topic-pill">Психические маркеры</span>
+          <span class="topic-pill">Бхават Бхавам</span>
+          <span class="topic-pill">Титхи Праввеша</span>
+          <span class="topic-pill">Текущие транзиты</span>
+          <span class="topic-pill">Аюрведа</span>
+          <span class="topic-pill">Священные писания</span>
+          <span class="topic-pill">Астрологические книги</span>
+        </div>
+      </div>
+
+    </div>
   </section>
 
-
-  <section id="testimonials">
+  <!-- ================================
+       ОТЗЫВЫ
+       ================================ -->
+  <section id="testimonials" class="section">
     <div class="container">
+      <p class="section-label">Истории клиентов</p>
       <h2 class="section-title">Отзывы</h2>
       <div class="testimonial">
-        <p>Марина помогла мне понять себя на глубинном уровне. Её подход - это не просто гороскоп, это настоящая
-          трансформация.</p>
-        <em>- Алина К.</em>
+        <p>Марина помогла мне понять себя на глубинном уровне. Её подход — это не просто гороскоп, это настоящая трансформация.</p>
+        <em>— Алина К.</em>
       </div>
       <div class="testimonial">
-        <p>Благодаря консультации мы с мужем увидели, почему мы такие разные - и как лучше понять друг друга. Спасибо!
-        </p>
-        <em>- Ирина и Олег</em>
+        <p>Благодаря консультации мы с мужем увидели, почему мы такие разные — и как лучше понять друг друга. Спасибо!</p>
+        <em>— Ирина и Олег</em>
       </div>
-      <div class="center-wrapper">
+      <div class="center-wrapper" style="margin-top: 2rem;">
         <a href="https://t.me/+aRnIA6fRqTthNDVi" target="_blank" class="btn">Все отзывы</a>
       </div>
     </div>
-
   </section>
 
-  <section id="contact">
+  <!-- ================================
+       КОНТАКТЫ
+       ================================ -->
+  <section id="contact" class="section">
     <div class="container">
-      <h2 class="section-title">Свяжитесь со мной</h2>
+      <p class="section-label">Напишите мне</p>
+      <h2 class="section-title">Оставьте свои данные</h2>
       <div class="contact-container">
-        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-left"  >
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-left">
           <input type="hidden" name="access_key" value="d62324a4-e96c-41b1-988b-c3e5bf6cae13">
-          <input type="hidden" name="redirect" value="https://marinasmit.com.ua/thank-you.html">
-          
+          <input type="hidden" name="redirect" value="https://marinasmit.com.ua/thank-you-contact.html">
           <input type="text" name="name" placeholder="Имя" class="contact-inputs" required>
-          <input type="phone" name="phone" placeholder="Номер телефона +1 234 567 89" class="contact-inputs" required>
+          <input type="tel" name="tel" placeholder="Номер телефона +1 234 567 89" class="contact-inputs" required>
           <input type="email" name="email" placeholder="Ваша почта example@mail.com" class="contact-inputs" required>
           <div>
-          <input type="radio" id="consultation" name="service" value="Консультация" checked>
+            <input type="radio" id="consultation" name="service" value="Консультация" checked>
             <label for="consultation">Консультация</label>
           </div>
           <div>
             <input type="radio" id="education" name="service" value="Обучение">
-              <label for="education">Обучение</label>
-            </div>
-          <textarea name="message" placeholder="Дополнительные коментарии" class="contact-inputs" maxlength="300"></textarea>
-         <button type="submit" class="btn">Отправить</button>
-      </form>
+            <label for="education">Обучение</label>
+          </div>
+          <textarea name="message" placeholder="Дополнительные комментарии" class="contact-inputs" maxlength="300"></textarea>
+          <button type="submit" class="btn">Отправить</button>
+        </form>
       </div>
-      <!-- Кнопки социальных сетей -->
       <div class="social-buttons">
         <a href="https://t.me/MarynaSmit" target="_blank" class="social-button">
           <img src="social-media/telegram.svg" alt="Telegram">
@@ -659,20 +578,15 @@
       </div>
     </div>
   </section>
-  <div class="contact-icon">
-    <a href="javascript:void(0);" id="contact-button">
-      <i class="fas fa-phone-alt"></i>
-    </a>
-  </div>
 
+  <!-- Floating contact button -->
   <div class="contact-btn" id="contactToggle">
     <img src="social-media/phone-contact.png" alt="Контакты">
     <div class="social-links">
       <a href="https://t.me/MarynaSmit" target="_blank" class="social-icon telegram">
         <img src="social-media/telegram.svg" alt="Telegram">
       </a>
-      <a href="https://www.instagram.com/jyotish.veda?igsh=OWQ5NmhkdXo1NWZu" target="_blank"
-        class="social-icon instagram">
+      <a href="https://www.instagram.com/jyotish.veda?igsh=OWQ5NmhkdXo1NWZu" target="_blank" class="social-icon instagram">
         <img src="social-media/instagram.svg" alt="Instagram">
       </a>
       <a href="https://wa.me/380989559547" target="_blank" class="social-icon whatsapp">
@@ -681,11 +595,46 @@
     </div>
   </div>
 
-
+  <!-- ================================
+       FOOTER
+       ================================ -->
   <footer class="footer">
-    <p>© 2025 Marina Smit | Все права защищены</p>
+    <p>© 2024-2026 Marina Smit | Все права защищены</p>
   </footer>
+
+  <script>
+    // Consultation tabs
+    const isMobile = () => window.innerWidth <= 768;
+    document.querySelectorAll('.consult-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const id = tab.dataset.tab;
+        if (isMobile()) {
+          const panels = document.querySelector('.consult-panels');
+          const panel = document.getElementById('panel-' + id);
+          const wasActive = tab.classList.contains('active');
+          document.querySelectorAll('.consult-tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.consult-panel').forEach(p => p.classList.remove('active'));
+          if (!wasActive) { tab.classList.add('active'); panel.classList.add('active'); panels.classList.add('mobile-open'); }
+          else { panels.classList.remove('mobile-open'); }
+        } else {
+          document.querySelectorAll('.consult-tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.consult-panel').forEach(p => p.classList.remove('active'));
+          tab.classList.add('active');
+          document.getElementById('panel-' + id).classList.add('active');
+        }
+      });
+    });
+    // Expand buttons (mobile only)
+    document.querySelectorAll('.panel-expand-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const full = btn.closest('.consult-panel').querySelector('.panel-full');
+        const open = full.classList.toggle('open');
+        btn.classList.toggle('open', open);
+        btn.querySelector('.expand-text').textContent = open ? 'Свернуть' : 'Подробнее';
+      });
+    });
+  </script>
   <script src="script.js"></script>
-  </body>
+</body>
 
 </html>

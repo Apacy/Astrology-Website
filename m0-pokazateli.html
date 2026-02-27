@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeviAcademy - Модуль 0 · Система Показателей Планет</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style-module0-block1.css">
+
+<style>
+  :root {
+    --b2-accent: #4a2d5a;        
+    --b2-accent-mid: #7a5a8a;    
+    --b2-accent-light: #f5eef8;  
+    --b2-accent-glow: rgba(74,45,90,0.12);
+    --b2-gradient: linear-gradient(to right top, #d4b8c0, #e8d0d8, #fff0f3);
+    --rose: #c9a8d8;
+    --light-rose: #f5eef8;
+  }
+
+  header { background: rgba(245,238,248,0.92); }
+
+  /* Swap hero gradient */
+  .hero { background: var(--b2-gradient); }
+
+  /* Accent colour swaps */
+  .hero-tag {
+    border-color: #c9a8d8;
+    color: var(--b2-accent);
+    box-shadow: 0 2px 8px rgba(45,110,126,0.18);
+  }
+  .hero-content h1 em { color: var(--b2-accent); }
+  .hero-subtitle { color: #5a3a6a; }
+  .hero-content p { color: #4a2a5a; }
+
+  .btn { background: var(--b2-accent); }
+  .btn:hover { background: var(--b2-accent-mid); }
+
+  .price-display .amount { color: var(--b2-accent); }
+
+  /* Stats bar */
+  .stat-num { color: var(--b2-accent); }
+  .stats-bar { border-color: #c9a8d8; }
+  .stat-item { border-right-color: #c9a8d8; }
+
+  /* Section label */
+  .section-label { color: #8a4fa0; }
+  .section-title::after { background: var(--b2-accent); }
+
+  /* Module cards */
+  .module-num { color: #c9a8d8; }
+  .module-card:hover .module-num { color: var(--b2-accent); }
+  .module-card:hover { border-color: #b07ac8; }
+  .module-body h3 { color: var(--b2-accent); }
+  .module-lessons-badge {
+    background: var(--b2-accent-light);
+    border-color: #c9a8d8;
+    color: #7a5a8a;
+  }
+  .module-topics li {
+    background: var(--b2-accent-light);
+    border-color: rgba(201,168,216,0.6);
+    color: #3a1e4a;
+  }
+  .for-card strong { color: var(--b2-accent); }
+  .for-card::before {
+    background: linear-gradient(to right, var(--b2-accent), transparent);
+  }
+
+  /* Footer CTA */
+  .footer-cta { background: var(--b2-gradient); border-color: #c9a8d8; }
+  .footer-cta p { color: #5a3a6a; }
+
+  /* Breadcrumb active */
+  .breadcrumb span { color: var(--b2-accent); }
+
+  /* Decorative circles in hero */
+  .hero::after  { border-color: rgba(74,45,90,0.12); }
+  .hero::before { border-color: rgba(74,45,90,0.16); }
+
+  /* ---- Block 2 exclusive: source-list styling ---- */
+  .source-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto 0;
+  }
+  .source-card {
+    background: white;
+    border: 1px solid #c9a8d8;
+    border-radius: 16px;
+    padding: 1.4rem 1.6rem;
+    border-left: 4px solid var(--b2-accent);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .source-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(45,110,126,0.14);
+  }
+  .source-card .src-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--b2-accent);
+    margin-bottom: 4px;
+  }
+  .source-card .src-sub {
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: #7a5a8a;
+    letter-spacing: 0.06em;
+  }
+
+  /* ---- Practical block tags ---- */
+  .practical-section {
+    background: white;
+    padding: 5rem 0;
+  }
+  .practical-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  .practical-tag {
+    background: var(--b2-accent-light);
+    border: 1px solid #c9a8d8;
+    color: var(--b2-accent);
+    font-size: 0.82rem;
+    font-weight: 300;
+    padding: 8px 18px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+    transition: 0.3s, color 0.3s;
+  }
+  .practical-tag:hover {
+    background: var(--b2-accent);
+    color: white;
+  }
+
+  /* Spinning symbol: unique for block 2 */
+  .hero-visual svg {
+    animation: slowspin 120s linear infinite reverse; /* reverse direction */
+    opacity: 0.15;
+  }
+
+  @media (max-width: 900px) {
+    .source-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+    <div class="logo">
+      <img src="./image/logoms.svg" alt="logo">
+      <a href="index.html" class="main-page-link-style">Marina Smit</a>
+    </div>
+    <nav class="nav">
+      <a href="index.html#edu">Обучение</a>
+      <a href="index.html#services">Консультации</a>
+      <a href="index.html#testimonials">Отзывы</a>
+      <a href="index.html#contact">Контакты</a>
+    </nav>
+    <div class="breadcrumb">
+      <a href="index.html#edu">Обучение → Модуль 0</a> → <span>Система Показателей Планет</span>
+    </div>
+    <div class="burger" id="burger">&#9776;</div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html#edu">Обучение</a>
+    <a href="index.html#services">Консультации</a>
+    <a href="index.html#testimonials">Отзывы</a>
+    <a href="index.html#contact">Контакты</a>
+  </div>
+</header>
+
+<!-- Герой -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag fade-up delay-1">Модуль 0 · Мини-Курс · Блок II</div>
+    <h1 class="fade-up delay-2">
+      Система<br>
+      <em>Показателей</em><br>
+      Всех Планет
+    </h1>
+    <p class="hero-subtitle fade-up delay-3">Классические Источники Джйотиш · Сравнительный Анализ Школ</p>
+    <p class="fade-up delay-3">
+      Для тех, кто хочет опираться на первоисточники - а не на поверхностные трактовки. Каждая Граха как самостоятельная система смыслов.
+    </p>
+    <div class="hero-actions fade-up delay-4">
+      <a href="#" class="btn">Записаться</a>
+      <div class="price-display">
+        <span class="amount">$50</span>
+        <span class="label">единоразовый платёж</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Декоративный символ - Sri Yantra-inspired star для блока 2 -->
+  <div class="hero-visual fade-up delay-5">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer squares rotated (yantra feel) -->
+      <rect x="10" y="10" width="180" height="180" fill="#4a2d5a" fill-opacity="0.04" stroke="none"/>
+      <rect x="36" y="36" width="128" height="128" fill="#4a2d5a" fill-opacity="0.04" stroke="none" transform="rotate(45 100 100)"/>
+      <!-- Inner rings -->
+      <circle cx="100" cy="100" r="80" stroke="#4a2d5a" stroke-width="0.5"/>
+      <circle cx="100" cy="100" r="60" stroke="#4a2d5a" stroke-width="0.5"/>
+      <circle cx="100" cy="100" r="40" stroke="#4a2d5a" stroke-width="0.5"/>
+      <circle cx="100" cy="100" r="20" stroke="#4a2d5a" stroke-width="0.5"/>
+      <!-- Upward triangle large -->
+      <polygon points="100,18 178,155 22,155" stroke="#4a2d5a" stroke-width="0.7"/>
+      <!-- Downward triangle large -->
+      <polygon points="100,182 22,45 178,45" stroke="#4a2d5a" stroke-width="0.7"/>
+      <!-- Upward triangle medium -->
+      <polygon points="100,42 158,142 42,142" stroke="#4a2d5a" stroke-width="0.5"/>
+      <!-- Downward triangle medium -->
+      <polygon points="100,158 42,58 158,58" stroke="#4a2d5a" stroke-width="0.5"/>
+      <!-- Central dot cluster -->
+      <circle cx="100" cy="100" r="4" fill="#4a2d5a"/>
+      <circle cx="100" cy="100" r="8" stroke="#4a2d5a" stroke-width="0.4"/>
+      <!-- 8 petal lotus dots -->
+      <circle cx="100" cy="72" r="2" fill="#4a2d5a"/>
+      <circle cx="100" cy="128" r="2" fill="#4a2d5a"/>
+      <circle cx="72" cy="100" r="2" fill="#4a2d5a"/>
+      <circle cx="128" cy="100" r="2" fill="#4a2d5a"/>
+      <circle cx="80" cy="80" r="2" fill="#4a2d5a"/>
+      <circle cx="120" cy="80" r="2" fill="#4a2d5a"/>
+      <circle cx="80" cy="120" r="2" fill="#4a2d5a"/>
+      <circle cx="120" cy="120" r="2" fill="#4a2d5a"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Панель Статистики -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-num">9</span>
+      <span class="stat-label">Уроков</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">9</span>
+      <span class="stat-label">Файлов-Конспектов</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">18+</span>
+      <span class="stat-label">Часов Обучения</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">5</span>
+      <span class="stat-label">Школ Джйотиш</span>
+    </div>
+  </div>
+</div>
+
+<!-- Классические Источники -->
+<section class="curriculum">
+  <div class="container">
+    <p class="section-label">Первоисточники</p>
+    <h2 class="section-title">На Каких Текстах Основан Курс</h2>
+  </div>
+  <div class="source-grid">
+    <div class="source-card">
+      <div class="src-title">Брихат Парашара Хора Шастра</div>
+      <div class="src-sub">Шлоки с переводом и развёрнутыми пояснениями</div>
+    </div>
+    <div class="source-card">
+      <div class="src-title">Брихад-Джатака Варахамихиры</div>
+      <div class="src-sub">Классические трактовки планет</div>
+    </div>
+    <div class="source-card">
+      <div class="src-title">Саравали · Кальяна Варма</div>
+      <div class="src-sub">Система показателей традиции</div>
+    </div>
+    <div class="source-card">
+      <div class="src-title">Школа Рамана · B. V. Raman</div>
+      <div class="src-sub">Авторитетные современные подходы</div>
+    </div>
+    <div class="source-card">
+      <div class="src-title">Школа Рао · K. N. Rao</div>
+      <div class="src-sub">Практическая система анализа</div>
+    </div>
+    <div class="source-card">
+      <div class="src-title">Сводная Таблица Школ</div>
+      <div class="src-sub">Парашара - Рао - Раман - Саравали - Варахамихира</div>
+    </div>
+  </div>
+</section>
+
+<!-- Учебная программа -->
+<section style="background: var(--light-rose); padding: 5rem 0;">
+  <div class="container">
+    <p class="section-label">Чему вы научитесь</p>
+    <h2 class="section-title">Программа Курса</h2>
+  </div>
+
+  <div class="modules-list">
+
+    <div class="module-card">
+      <div class="module-num">01</div>
+      <div class="module-body">
+        <h3>Солнце · Сурья</h3>
+        <span class="module-lessons-badge">1 урок + файл-конспект</span>
+        <ul class="module-topics">
+          <li>Принципы и значение Сурьи</li>
+          <li>Показатели по БПХШ</li>
+          <li>Адитья · Сравнение школ</li>
+          <li>Сила и слабость планеты</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">02</div>
+      <div class="module-body">
+        <h3>Луна · Чандра</h3>
+        <span class="module-lessons-badge">1 урок + файл-конспект</span>
+        <ul class="module-topics">
+          <li>Ум, эмоции, мать</li>
+          <li>Показатели по Варахамихире</li>
+          <li>Лунные стихии в практике</li>
+          <li>Накшатры Луны</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">03</div>
+      <div class="module-body">
+        <h3>Марс · Мангал</h3>
+        <span class="module-lessons-badge">1 урок + файл-конспект</span>
+        <ul class="module-topics">
+          <li>Энергия, воля, братья</li>
+          <li>Показатели по Саравали</li>
+          <li>Мангал-доша · практика</li>
+          <li>Школа Рао vs Раман</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">04</div>
+      <div class="module-body">
+        <h3>Меркурий · Будха</h3>
+        <span class="module-lessons-badge">1 урок + файл-конспект</span>
+        <ul class="module-topics">
+          <li>Интеллект, коммуникация, торговля</li>
+          <li>Сводная таблица всех школ</li>
+          <li>Ретроградный Будха</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">05</div>
+      <div class="module-body">
+        <h3>Юпитер · Гуру</h3>
+        <span class="module-lessons-badge">1 урок + файл-конспект</span>
+        <ul class="module-topics">
+          <li>Мудрость, достаток, дети</li>
+          <li>Показатели БПХШ со шлоками</li>
+          <li>Гуру как Дхарма-каракa</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">06</div>
+      <div class="module-body">
+        <h3>Венера · Шукра</h3>
+        <span class="module-lessons-badge">1 урок + файл-конспект</span>
+        <ul class="module-topics">
+          <li>Красота, партнёрство, творчество</li>
+          <li>Показатели по Варахамихире</li>
+          <li>Шукра как Кама-карака</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">07</div>
+      <div class="module-body">
+        <h3>Сатурн · Шани</h3>
+        <span class="module-lessons-badge">1 урок + файл-конспект</span>
+        <ul class="module-topics">
+          <li>Карма, дисциплина, ограничения</li>
+          <li>Сравнение всех пяти школ</li>
+          <li>Шани-даша в гороскопе</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">08</div>
+      <div class="module-body">
+        <h3>Раху & Кету</h3>
+        <span class="module-lessons-badge">1 урок + файл-конспект</span>
+        <ul class="module-topics">
+          <li>Теневые планеты · Кармические узлы</li>
+          <li>Желание vs. освобождение</li>
+          <li>Раху/Кету по всем классическим источникам</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">09</div>
+      <div class="module-body">
+        <h3>Синтез и Сравнительный Анализ</h3>
+        <span class="module-lessons-badge">1 урок · Ключевой Урок</span>
+        <ul class="module-topics">
+          <li>Сводная таблица: Парашара - Рао - Раман - Саравали</li>
+          <li>Сопоставление акцентов разных традиций</li>
+          <li>Как выбирать школу для практики</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Практический Блок -->
+<section class="practical-section">
+  <div class="container">
+    <p class="section-label">Каждый урок включает</p>
+    <h2 class="section-title">Практический Блок по Каждой Планете</h2>
+  </div>
+  <div class="practical-grid">
+    <span class="practical-tag">Проявленные материальные объекты</span>
+    <span class="practical-tag">Сила и слабость планеты</span>
+    <span class="practical-tag">Заболевания и уязвимые зоны</span>
+    <span class="practical-tag">Питание и продукты</span>
+    <span class="practical-tag">Деятельность и профессии</span>
+    <span class="practical-tag">Драгоценные и полудрагоценные камни</span>
+    <span class="practical-tag">Одежда и ткани</span>
+    <span class="practical-tag">Растения · цветы · деревья</span>
+    <span class="practical-tag">Животные и птицы</span>
+    <span class="practical-tag">Реальные проявления в жизни</span>
+  </div>
+</section>
+
+<!-- Для кого это -->
+<section class="for-whom section">
+  <div class="container">
+    <p class="section-label">Аудитория</p>
+    <h2 class="section-title">Для Кого Этот Курс</h2>
+    <div class="for-grid">
+      <div class="for-card">
+        <p>Те, кто хочет опираться на <strong>классические тексты</strong>, а не на поверхностные интерпретации.</p>
+      </div>
+      <div class="for-card">
+        <p>Те, кто изучает Джйотиш для <strong>личного понимания</strong> и хочет выстроить системное мышление.</p>
+      </div>
+      <div class="for-card">
+        <p>Те, кто планирует <strong>консультировать</strong> и нуждается в надёжной, структурированной базе.</p>
+      </div>
+      <div class="for-card">
+        <p>Будущие студенты <strong>полной программы Джйотиш</strong>, которые хотят сначала освоить язык планет.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="footer-cta">
+  <div class="footer-cta-inner">
+    <div>
+      <h2>Готовы начать?</h2>
+      <p>Присоединяйтесь к Блоку II и получите опору и структуру для глубокого изучения Джйотиш.</p>
+    </div>
+    <div class="footer-cta-right">
+      <div class="price-display">
+        <span class="amount">$50</span>
+        <span class="label">одноразово · полный доступ</span>
+      </div>
+      <a href="#" class="btn">Записаться</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2024-2026 Marina Smit | Все права защищены</p>
+</footer>
+
+<script>
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobileNav');
+  burger.addEventListener('click', () => {
+    mobileNav.classList.toggle('show');
+  });
+</script>
+</body>
+</html>

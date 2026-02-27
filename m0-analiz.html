@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeviAcademy - Модуль 0 · Основы Ведической Астрологии</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style-module0-block1.css">
+
+<style>
+  :root {
+    --b3-accent: #2d3d1e;
+    --b3-accent-mid: #4a6630;
+    --b3-accent-light: #f0f4ea;
+    --b3-accent-glow: rgba(74,102,48,0.12);
+    --b3-gradient: linear-gradient(to right top, #cdd9b8, #e8f0d0, #fafff0);
+    --rose: #b0c890;
+    --light-rose: #f0f4ea;
+  }
+
+  header { background: rgba(240,244,234,0.92); }
+
+  .hero { background: var(--b3-gradient); }
+
+  .hero-tag {
+    border-color: #b0c890;
+    color: var(--b3-accent);
+    box-shadow: 0 2px 8px rgba(74,102,48,0.18);
+  }
+  .hero-content h1 em { color: var(--b3-accent); }
+  .hero-subtitle { color: #2a3a1a; }
+  .hero-content p { color: #1e2e10; }
+
+  .btn { background: var(--b3-accent); }
+  .btn:hover { background: var(--b3-accent-mid); }
+
+  .price-display .amount { color: var(--b3-accent); }
+
+  .stat-num { color: var(--b3-accent); }
+  .stats-bar { border-color: #b0c890; }
+  .stat-item { border-right-color: #b0c890; }
+
+  .section-label { color: #5a7a38; }
+  .section-title::after { background: var(--b3-accent); }
+
+  .module-num { color: #b0c890; }
+  .module-card:hover .module-num { color: var(--b3-accent); }
+  .module-card:hover { border-color: #8aaa60; }
+  .module-body h3 { color: var(--b3-accent); }
+  .module-lessons-badge {
+    background: var(--b3-accent-light);
+    border-color: #b0c890;
+    color: var(--b3-accent-mid);
+  }
+  .module-topics li {
+    background: var(--b3-accent-light);
+    border-color: rgba(176,200,144,0.6);
+    color: #2a3a1a;
+  }
+  .for-card strong { color: var(--b3-accent); }
+  .for-card::before {
+    background: linear-gradient(to right, var(--b3-accent), transparent);
+  }
+
+  .footer-cta { background: var(--b3-gradient); border-color: #b0c890; }
+  .footer-cta p { color: #2a3a1a; }
+
+  .breadcrumb span { color: var(--b3-accent); }
+
+  .hero::after  { border-color: rgba(45,61,30,0.08); }
+  .hero::before { border-color: rgba(45,61,30,0.06); }
+
+  /* Outcomes section */
+  .outcomes-section {
+    background: white;
+    padding: 5rem 0;
+  }
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto 0;
+  }
+  .outcome-card {
+    background: var(--b3-accent-light);
+    border: 1px solid #b0c890;
+    border-radius: 16px;
+    padding: 1.4rem 1.6rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .outcome-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(74,102,48,0.14);
+  }
+  .outcome-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #b0c890;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: color 0.3s;
+  }
+  .outcome-card:hover .outcome-num { color: var(--b3-accent); }
+  .outcome-card p {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: #2a3a1a;
+    line-height: 1.65;
+  }
+
+  /* Format badges */
+  .format-section {
+    background: var(--b3-accent-light);
+    padding: 5rem 0;
+  }
+  .format-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 90%;
+    max-width: 900px;
+    margin: 2rem auto 0;
+  }
+  .format-card {
+    background: white;
+    border: 1px solid #b0c890;
+    border-radius: 16px;
+    padding: 2rem;
+    border-top: 4px solid var(--b3-accent);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .format-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(74,102,48,0.14);
+  }
+  .format-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--b3-accent);
+    margin-bottom: 0.6rem;
+  }
+  .format-card p {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: #3a4a2a;
+    line-height: 1.65;
+  }
+
+  /* Flower of Life SVG spins normally */
+  .hero-visual svg {
+    animation: slowspin 100s linear infinite;
+    opacity: 0.13;
+  }
+  .curriculum { background: #eef2e8; }
+
+  @media (max-width: 900px) {
+    .format-grid { grid-template-columns: 1fr; }
+    .outcomes-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+    <div class="logo">
+      <img src="./image/logoms.svg" alt="logo">
+      <a href="index.html" class="main-page-link-style">Marina Smit</a>
+    </div>
+    <nav class="nav">
+      <a href="index.html#edu">Обучение</a>
+      <a href="index.html#services">Консультации</a>
+      <a href="index.html#testimonials">Отзывы</a>
+      <a href="index.html#contact">Контакты</a>
+    </nav>
+    <div class="breadcrumb">
+      <a href="index.html#edu">Обучение → Модуль 0</a> → <span>Основы Ведической Астрологии</span>
+    </div>
+    <div class="burger" id="burger">&#9776;</div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html#edu">Обучение</a>
+    <a href="index.html#services">Консультации</a>
+    <a href="index.html#testimonials">Отзывы</a>
+    <a href="index.html#contact">Контакты</a>
+  </div>
+</header>
+
+<!-- Герой -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag fade-up delay-1">Модуль 0 · Полный Курс · Блок III</div>
+    <h1 class="fade-up delay-2">
+      Основы<br>
+      <em>Ведической</em><br>
+      Астрологии Jyotish
+    </h1>
+    <p class="hero-subtitle fade-up delay-3">Системный Анализ Гороскопа Рождения · 90+ часов</p>
+    <p class="fade-up delay-3">
+      Для тех, кто хочет понимать гороскоп как целостную систему - без хаотичных трактовок, догадок и противоречий. Классический подход Джйотиш с выстроенным алгоритмом анализа.
+    </p>
+    <div class="hero-actions fade-up delay-4">
+      <a href="#" class="btn">Записаться</a>
+      <div class="price-display">
+        <span class="amount">$290</span>
+        <span class="label">единоразовый платёж</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flower of Life -->
+  <div class="hero-visual fade-up delay-5">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Central circle -->
+      <circle cx="100" cy="100" r="30" stroke="#2d3d1e" stroke-width="0.6"/>
+      <!-- 6 surrounding petals -->
+      <circle cx="100" cy="70"  r="30" stroke="#2d3d1e" stroke-width="0.6"/>
+      <circle cx="100" cy="130" r="30" stroke="#2d3d1e" stroke-width="0.6"/>
+      <circle cx="126" cy="85"  r="30" stroke="#2d3d1e" stroke-width="0.6"/>
+      <circle cx="126" cy="115" r="30" stroke="#2d3d1e" stroke-width="0.6"/>
+      <circle cx="74"  cy="85"  r="30" stroke="#2d3d1e" stroke-width="0.6"/>
+      <circle cx="74"  cy="115" r="30" stroke="#2d3d1e" stroke-width="0.6"/>
+      <!-- Outer ring of 6 -->
+      <circle cx="100" cy="40"  r="30" stroke="#2d3d1e" stroke-width="0.4"/>
+      <circle cx="100" cy="160" r="30" stroke="#2d3d1e" stroke-width="0.4"/>
+      <circle cx="152" cy="70"  r="30" stroke="#2d3d1e" stroke-width="0.4"/>
+      <circle cx="152" cy="130" r="30" stroke="#2d3d1e" stroke-width="0.4"/>
+      <circle cx="48"  cy="70"  r="30" stroke="#2d3d1e" stroke-width="0.4"/>
+      <circle cx="48"  cy="130" r="30" stroke="#2d3d1e" stroke-width="0.4"/>
+      <!-- Bounding circle -->
+      <circle cx="100" cy="100" r="92" stroke="#2d3d1e" stroke-width="0.5"/>
+      <!-- Centre dot -->
+      <circle cx="100" cy="100" r="3" fill="#2d3d1e"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Панель Статистики -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-num">30</span>
+      <span class="stat-label">Теоретических уроков</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">30</span>
+      <span class="stat-label">Практических занятий</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">90+</span>
+      <span class="stat-label">Часов обучения</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">2</span>
+      <span class="stat-label">Формата обучения</span>
+    </div>
+  </div>
+</div>
+
+<!-- Учебная программа -->
+<section class="curriculum">
+  <div class="container">
+    <p class="section-label">Чему вы научитесь</p>
+    <h2 class="section-title">Программа Курса</h2>
+  </div>
+
+  <div class="modules-list">
+
+    <div class="module-card">
+      <div class="module-num">01</div>
+      <div class="module-body">
+        <h3>Философия и Основы Джйотиш</h3>
+        <span class="module-lessons-badge">Базовый блок</span>
+        <ul class="module-topics">
+          <li>Принципы ведической астрологии</li>
+          <li>Отличие от западного подхода</li>
+          <li>Карма · Гуны · Варны</li>
+          <li>Их отражение в гороскопе</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">02</div>
+      <div class="module-body">
+        <h3>Гороскоп Рождения · Построение</h3>
+        <span class="module-lessons-badge">Технический блок</span>
+        <ul class="module-topics">
+          <li>Правила построения и проверки карты</li>
+          <li>Типы астрологических карт</li>
+          <li>Системы домов</li>
+          <li>Астрологические программы и настройки</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">03</div>
+      <div class="module-body">
+        <h3>Дома · Планеты · Знаки</h3>
+        <span class="module-lessons-badge">Аналитический блок</span>
+        <ul class="module-topics">
+          <li>Система домов и смысловые группы</li>
+          <li>Грахи: характеристики и показатели</li>
+          <li>Знаки зодиака (раши) и управители</li>
+          <li>Взаимосвязи и логика элементов</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">04</div>
+      <div class="module-body">
+        <h3>Положение Планет в Домах и Знаках</h3>
+        <span class="module-lessons-badge">Интерпретационный блок</span>
+        <ul class="module-topics">
+          <li>Результаты положения каждой планеты</li>
+          <li>Ось Раху–Кету и жизненные сценарии</li>
+          <li>Положение управителей домов</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">05</div>
+      <div class="module-body">
+        <h3>Йоги · Соединения · Упайи</h3>
+        <span class="module-lessons-badge">Продвинутый блок</span>
+        <ul class="module-topics">
+          <li>Йоги и соединения планет</li>
+          <li>Упайи как инструмент коррекции</li>
+          <li>Целостный алгоритм анализа гороскопа</li>
+          <li>Синтез всех элементов в практике</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Результаты обучения -->
+<section class="outcomes-section">
+  <div class="container">
+    <p class="section-label">По итогам курса</p>
+    <h2 class="section-title">Что Вы Получите</h2>
+  </div>
+  <div class="outcomes-grid">
+    <div class="outcome-card">
+      <div class="outcome-num">01</div>
+      <p>Понимаете <strong>алгоритм трактовки</strong>, структуру и логику гороскопа рождения</p>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-num">02</div>
+      <p>Уверенно ориентируетесь в структуре гороскопа и последовательности его анализа</p>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-num">03</div>
+      <p>Умеете делать <strong>целостные трактовки</strong>, а не набор отдельных разрозненных выводов</p>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-num">04</div>
+      <p>Получаете прочную базу для <strong>дальнейшего углубления</strong> в Джйотиш и консультационной практики</p>
+    </div>
+  </div>
+</section>
+
+<!-- Форматы обучения -->
+<section class="format-section">
+  <div class="container">
+    <p class="section-label">Как проходит обучение</p>
+    <h2 class="section-title">Форматы Обучения</h2>
+  </div>
+  <div class="format-grid">
+    <div class="format-card">
+      <h4>Живое обучение с преподавателем</h4>
+      <p>Обучение в группе с поддержкой преподавателя и куратора. Живой контакт, разбор вопросов и обратная связь в процессе. По набору группы.</p>
+    </div>
+    <div class="format-card">
+      <h4>Индивидуальный темп</h4>
+      <p>Возможность двигаться в своём ритме, сохраняя контакт с группой. Видеоуроки, практические занятия и материалы остаются у вас.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Для кого это -->
+<section class="for-whom section">
+  <div class="container">
+    <p class="section-label">Аудитория</p>
+    <h2 class="section-title">Для Кого Этот Курс</h2>
+    <div class="for-grid">
+      <div class="for-card">
+        <p>Те, кто хочет изучать ведическую астрологию <strong>глубоко и системно</strong> - от основ до целостного анализа.</p>
+      </div>
+      <div class="for-card">
+        <p>Те, кому важно <strong>понимать логику гороскопа</strong>, а не просто читать значения планет.</p>
+      </div>
+      <div class="for-card">
+        <p>Те, кто <strong>планирует консультировать</strong> или уже работает с людьми и ищет структурированную базу.</p>
+      </div>
+      <div class="for-card">
+        <p>Те, кто устал от разрозненной информации и ищет <strong>целостную систему</strong> понимания Джйотиш.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="footer-cta">
+  <div class="footer-cta-inner">
+    <div>
+      <h2>Готовы начать?</h2>
+      <p>Присоединяйтесь к полному курсу и освойте системный анализ гороскопа рождения.</p>
+    </div>
+    <div class="footer-cta-right">
+      <div class="price-display">
+        <span class="amount">$290</span>
+        <span class="label">одноразово · полный доступ</span>
+      </div>
+      <a href="#" class="btn">Записаться</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2024-2026 Marina Smit | Все права защищены</p>
+</footer>
+
+<script>
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobileNav');
+  burger.addEventListener('click', () => {
+    mobileNav.classList.toggle('show');
+  });
+</script>
+</body>
+</html>
