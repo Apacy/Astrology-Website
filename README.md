@@ -1,78 +1,103 @@
-# Astrology Website
+# DeviAcademy — Marina Smit
+### Vedic Astrology Website & Academy Platform
 
-This is an **Astrology Website** project developed as my first comercial project [View Project](https://marinasmit.com.ua)
+> First commercial project · Live at [marinasmit.com.ua](https://marinasmit.com.ua)
 
-## Technologies Used
- - HTML5  
- - CSS3  
- - Google Fonts (or other web fonts as used)  
+---
+
+## Overview
+
+A multi-page website for a practicing Vedic astrologer and founder of DeviAcademy. The site covers personal consultations, structured learning modules (Jyotish courses), a community club, and a contact flow — all built without frameworks, in vanilla HTML, CSS, and JS.
+
+---
+
+## Pages
+
+| File | Description |
+|------|-------------|
+| `index.html` | Main landing page — hero, courses, consultations, astro club, reviews, contacts |
+| `m0-doma.html` | Module 0 · Block 1 — Houses, Planets, Signs |
+| `m0-pokazateli.html` | Module 0 · Block 2 — Planetary Indicators |
+| `m0-analiz.html` | Module 0 · Block 3 — Full Horoscope Analysis |
+| `m1-horoscope.html` | Module 1 · Full Jyotish Course |
+| `thank-you-contact.html` | Thank you page — after contact form submission |
+| `thank-you-course.html` | Thank you page — after course signup |
+
+---
+
+## Tech Stack
+
+- **HTML5** — semantic structure
+- **CSS3** — custom properties, grid, flexbox, animations
+- **Vanilla JS** — tab system, accordion, mobile nav, scroll animations
+- **Google Fonts** — Cormorant Garamond + Montserrat
+- **Web3Forms** — contact form handling
+- **Meta Pixel** — Facebook conversion tracking
 
 ---
 
 ## Key Features
- - Multi-section landing site (Services, Courses, Reviews, Contacts)  
- - Responsive design for various device sizes  
- - Semantic HTML structure  
- - Smooth navigation and content sections  
- - Contact section and social links integration  
+
+- Multi-page course system with per-block colour coding (rose · wine · sage · terracotta)
+- Horizontal tab UI for consultations with mobile accordion fallback
+- Animated hero sections with spinning SVG mandalas (unique per block)
+- Countdown redirect on thank-you pages with SVG progress ring
+- Editorial Astro Club section with topic pills
+- Fully responsive — mobile nav, adaptive grids, stacked layouts
+- Sticky header with backdrop blur
+- Scroll-triggered fade-in animations
 
 ---
 
-## How to Run
- 1. Download (or clone) the **Astrology Website** folder  
- 2. Ensure it contains the main HTML and CSS files (e.g. `index.html`, `style.css`, plus assets like images)  
- 3. Open the main HTML file in your preferred browser  
+## Structure
 
----
-
-## Project Structure
 ```
-Astrology-Website/
-├── image/
-│   ├── baby.JPG
-│   ├── baby.png
-│   ├── background_gold_pink.jpg
-│   ├── bg.PNG
-│   ├── destiny.PNG
-│   ├── finance.PNG
-│   ├── health.PNG
-│   ├── hero.PNG
-│   ├── horoscope.PNG
-│   ├── logoms.PNG
-│   ├── logoms.svg
-│   ├── migration.PNG
-│   ├── muhurta.PNG
-│   ├── prof_actv.PNG
-│   ├── relations.PNG
-│   ├── retrification.PNG
-│   └── service-bcground.PNG
+marinasmit-astrology/
 ├── index.html
-├── README.md
+├── m0-doma.html
+├── m0-pokazateli.html
+├── m0-analiz.html
+├── m1-horoscope.html
+├── thank-you-contact.html
+├── thank-you-course.html
+├── style.css
+├── style-module0.css
 ├── script.js
+├── robots.txt
+├── image/
+│   ├── logoms.svg
+│   ├── hero.PNG
+│   ├── module0.png · module1.png · module2.png
+│   └── service-bcground.PNG · ...
 ├── social-media/
-│   ├── instagram.svg
-│   ├── phone-contact.png
-│   ├── telegram.svg
-│   └── whatsapp.svg
-├── study-plan/
-│   └── OVA.pdf
-└── style.css
+│   ├── telegram.svg · instagram.svg · whatsapp.svg
+│   └── phone-contact.png
+└── study-plan/
+    ├── miniova.pdf
+    └── OVA.pdf
 ```
----
-
-## Design Highlights
- - Clean and elegant styling with consistent typography  
- - Well-spaced layout and readable content blocks  
- - Aesthetic responsiveness — looks good on mobile, tablet, desktop  
- - Sectioned layout: services, courses, testimonials, contact  
 
 ---
 
+## Running Locally
 
-## Live Demo
-[View Project](https://apacy.github.io/Astrology-Website/)
+```bash
+# Clone the repo
+git clone https://github.com/your-username/marinasmit-astrology.git
+
+# Open in browser
+open index.html
+# or simply drag index.html into your browser
+```
+
+No build step, no dependencies, no package manager needed.
 
 ---
 
+## Deployment
 
-Built as first comercial project  [View Project](https://marinasmit.com.ua)
+The site is deployed at **[marinasmit.com.ua](https://marinasmit.com.ua)** — static hosting, no server required.
+
+---
+
+*© 2024–2026 Marina Smit · DeviAcademy · All rights reserved*
