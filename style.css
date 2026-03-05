@@ -1319,8 +1319,7 @@ article { font-size: 0.8rem; }
   left: 0; top: 0.3rem;
 }
 
-/* Right column — content */
-.astro-club-content {}
+
 
 .astro-club-features-heading {
   font-family: 'Cormorant Garamond', serif;
@@ -1391,13 +1390,33 @@ article { font-size: 0.8rem; }
   padding: 5px 14px;
   border-radius: 20px;
   line-height: 1.4;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  transition: 0.2s, color 0.2s, border-color 0.2s;
   cursor: default;
 }
 .topic-pill:hover {
   background: var(--deep-gold);
   color: white;
   border-color: var(--deep-gold);
+}
+
+footer a {
+  color: rgb(212, 212, 212);
+  text-decoration-color: rgb(212, 212, 212);
+}
+
+footer a:hover {
+  color: rgb(255, 255, 255);
+  text-decoration-color: rgb(255, 255, 255);
+}
+
+footer a:visited {
+  color: rgb(180, 180, 180);
+  text-decoration-color: rgb(180, 180, 180);
+}
+
+footer a:active {
+  color: rgb(255, 255, 255);
+  text-decoration-color: rgb(255, 255, 255);
 }
 
 /* ================================

@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style-module0-block1.css">
 
+
 <style>
   :root {
     --b3-accent: #2d3d1e;
@@ -164,6 +165,70 @@
     .format-grid { grid-template-columns: 1fr; }
     .outcomes-grid { grid-template-columns: 1fr; }
   }
+
+  /* ══ COOKIE BANNER ══ */
+  #cookie-banner {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(140px);
+    width: calc(100% - 3rem);
+    max-width: 700px;
+    background: #ffffffcc;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(244,194,194,0.6);
+    border-radius: 20px;
+    padding: 1.4rem 1.8rem;
+    box-shadow: 0 8px 32px rgba(65,36,2,0.1), 0 2px 8px rgba(238,198,211,0.4), inset 0 1px 0 rgba(255,255,255,0.85);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 9999;
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease;
+    font-family: 'Montserrat', sans-serif;
+  }
+  #cookie-banner.visible { transform: translateX(-50%) translateY(0); opacity: 1; }
+  #cookie-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 12%; right: 12%; height: 1px;
+    background: linear-gradient(to right, transparent, rgba(244,194,194,0.9), transparent);
+  }
+  .cookie-icon { font-size: 1.7rem; flex-shrink: 0; }
+  .cookie-text { flex: 1; font-size: 0.75rem; font-weight: 300; color: rgba(46,26,40,0.7); line-height: 1.7; }
+  .cookie-text strong { display: block; font-weight: 400; color: #2e1a28; margin-bottom: 0.25rem; font-size: 0.8rem; }
+  .cookie-text a { color: #412402; text-decoration-color: rgba(65,36,2,0.3); text-underline-offset: 2px; transition: color 0.2s; }
+  .cookie-text a:hover { color: #6b3d04; }
+  .cookie-actions { display: flex; flex-direction: column; gap: 0.5rem; flex-shrink: 0; }
+  .btn-cookie-accept {
+    background: linear-gradient(135deg, #c8845a, #412402);
+    color: #fff; border: none; border-radius: 20px;
+    padding: 0.55rem 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem; font-weight: 400;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; box-shadow: 0 4px 14px rgba(65,36,2,0.25);
+    transition: opacity 0.2s; white-space: nowrap;
+  }
+  .btn-cookie-accept:hover { opacity: 0.88; }
+  .btn-cookie-decline {
+    background: transparent; color: rgba(46,26,40,0.45);
+    border: 1px solid rgba(244,194,194,0.7); border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem; font-weight: 300;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; transition: border-color 0.2s, color 0.2s; white-space: nowrap;
+  }
+  .btn-cookie-decline:hover { border-color: #f4c2c2; color: rgba(46,26,40,0.7); }
+  @media (max-width: 560px) {
+    #cookie-banner { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.2rem 1.3rem; }
+    .cookie-actions { flex-direction: row; width: 100%; }
+    .btn-cookie-accept, .btn-cookie-decline { flex: 1; text-align: center; }
+  }
+
 </style>
 </head>
 <body>
@@ -208,7 +273,7 @@
       Для тех, кто хочет понимать гороскоп как целостную систему - без хаотичных трактовок, догадок и противоречий. Классический подход Джйотиш с выстроенным алгоритмом анализа.
     </p>
     <div class="hero-actions fade-up delay-4">
-      <a href="index.html#contact" class="btn">Записаться</a>
+      <a href="https://t.me/Deviacademy_bot?start=ZGw6MzE0MTU4" id="bot-link" class="btn deep-link">Записаться</a> 
       <div class="price-display">
         <span class="amount">$290</span>
         <span class="label">единоразовый платёж</span>
@@ -424,14 +489,14 @@
         <span class="amount">$290</span>
         <span class="label">одноразово · полный доступ</span>
       </div>
-      <a href="index.html#contact" class="btn">Записаться</a>
+      <a href="https://t.me/Deviacademy_bot?start=ZGw6MzE0MTU4" id="bot-link" class="btn deep-link">Записаться</a> 
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <p>© 2024-2026 Marina Smit | Все права защищены</p>
+  <p>© 2024-2026 Marina Smit | Все права защищены · <a href="https://marinasmitcomua.wayforpay.link/" target="_blank">Условия использования</a> · <a href="privacy-policy.html">Политика конфиденциальности</a></p>
 </footer>
 
 <script>
@@ -441,5 +506,82 @@
     mobileNav.classList.toggle('show');
   });
 </script>
+
+<!-- ══ COOKIE BANNER ══ -->
+<div id="cookie-banner" role="dialog" aria-label="Согласие на использование файлов cookie">
+  <span class="cookie-icon">🍃</span>
+  <div class="cookie-text">
+    <strong>Мы используем файлы cookie</strong>
+    Этот сайт использует cookie и пиксели отслеживания (Meta Pixel) для аналитики и улучшения работы сайта. Нажимая «Принять», вы соглашаетесь с нашей
+    <a href="privacy-policy.html">Политикой конфиденциальности</a>.
+  </div>
+  <div class="cookie-actions">
+    <button class="btn-cookie-accept" onclick="acceptCookies()">Принять</button>
+    <button class="btn-cookie-decline" onclick="declineCookies()">Отклонить</button>
+  </div>
+</div>
+
+<!-- ══ COOKIE SCRIPT ══ -->
+<script>
+  (function() {
+    if (!localStorage.getItem('cookie_consent')) {
+      setTimeout(function() {
+        var b = document.getElementById('cookie-banner');
+        if (b) b.classList.add('visible');
+      }, 800);
+    } else if (localStorage.getItem('cookie_consent') === 'accepted') {
+      loadMetaPixel();
+    }
+  })();
+  function acceptCookies() {
+    localStorage.setItem('cookie_consent', 'accepted');
+    hideBanner(); loadMetaPixel();
+  }
+  function declineCookies() {
+    localStorage.setItem('cookie_consent', 'declined');
+    hideBanner();
+  }
+  function hideBanner() {
+    var b = document.getElementById('cookie-banner');
+    if (b) {
+      b.style.opacity = '0';
+      b.style.transform = 'translateX(-50%) translateY(140px)';
+      setTimeout(function() { b.style.display = 'none'; }, 500);
+    }
+  }
+  function loadMetaPixel() {
+    if (window._metaPixelLoaded) return;
+    window._metaPixelLoaded = true;
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2227666094419935');
+    fbq('track', 'PageView');
+  }
+</script>
+<script src="https://astrojyot.customer.smartsender.eu/js/client/dl.min.js"></script>
+
+  <script>
+    function getUTMParams() {
+      const params = new URLSearchParams(window.location.search);
+      const utms = {};
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(key => {
+        if(params.has(key)) utms[key] = params.get(key);
+      });
+      return utms;
+    }
+
+    const utmVariables = getUTMParams();
+
+    ssDeepLink('deep-link', 'astrojyot', false, {
+      variables: utmVariables
+    });
+  </script>
+
 </body>
 </html>
