@@ -76,3 +76,26 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+// Keep contact button above footer
+(function() {
+  const btn = document.querySelector('.contact-btn');
+  const footer = document.querySelector('.footer');
+  if (!btn || !footer) return;
+
+  function updateButtonPosition() {
+    const footerTop = footer.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    const btnHeight = btn.offsetHeight;
+    const defaultBottom = 30;
+
+    if (footerTop < windowHeight - defaultBottom - btnHeight) {
+      btn.style.bottom = (windowHeight - footerTop + 10) + 'px';
+    } else {
+      btn.style.bottom = defaultBottom + 'px';
+    }
+  }
+
+  window.addEventListener('scroll', updateButtonPosition, { passive: true });
+  window.addEventListener('resize', updateButtonPosition);
+  updateButtonPosition();
+})();

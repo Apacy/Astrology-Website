@@ -1497,3 +1497,177 @@ footer a:active {
   .astro-club-name { font-size: 2.2rem; }
   .astro-club-pitch { max-width: 100%; }
 }
+
+/* ================================
+   Footer — mobile tap fix
+   ================================ */
+@media (max-width: 768px) {
+  .footer {
+    padding-bottom: 5rem;
+  }
+  .footer a {
+    display: inline-block;
+    padding: 0.5rem 0.3rem;
+  }
+}
+
+/* ================================
+   Footer — multi-column redesign
+   ================================ */
+.footer {
+  background: var(--midnight);
+  color: rgba(255,245,247,0.75);
+  padding: 0;
+  font-size: 0.82rem;
+  font-weight: 300;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid rgba(244,194,194,0.12);
+}
+
+/* Brand column */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+.footer-logo img {
+  height: 2rem;
+  opacity: 0.85;
+  filter: brightness(0) invert(1);
+}
+.footer-logo span {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: rgba(255,245,247,0.9);
+  letter-spacing: 0.04em;
+}
+
+.footer-tagline {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(244,194,194,0.5);
+  margin-bottom: 1.2rem;
+  font-weight: 300;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.4rem;
+}
+.footer-contact a,
+.footer-contact span {
+  font-size: 0.78rem;
+  color: rgba(255,245,247,0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-contact a:hover { color: var(--rose); }
+
+.footer-socials {
+  display: flex;
+  gap: 0.6rem;
+}
+.footer-social-btn {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(244,194,194,0.2);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,245,247,0.5);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.footer-social-btn:hover {
+  border-color: var(--rose);
+  color: var(--rose);
+  background: rgba(244,194,194,0.08);
+}
+
+/* Nav columns */
+.footer-col-title {
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(244,194,194,0.55);
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(244,194,194,0.1);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer-links li a {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgba(255,245,247,0.6);
+  text-decoration: none;
+  text-decoration-color: transparent;
+  transition: color 0.2s;
+  display: inline-block;
+  padding: 0.2rem 0;
+}
+.footer-links li a:hover { color: rgba(255,245,247,0.95); }
+.footer-links li a:visited { color: rgba(255,245,247,0.5); }
+
+/* Payment icons */
+.footer-payment {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.4rem;
+  align-items: center;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 0 1.5rem;
+  font-size: 0.65rem;
+  color: rgba(255,245,247,0.25);
+  letter-spacing: 0.06em;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2.5rem 0 2rem;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(244,194,194,0.1);
+  }
+  .footer-bottom {
+    padding-bottom: 5rem; /* space for fixed contact button */
+  }
+  .footer-links li a {
+    padding: 0.4rem 0;  /* bigger tap target on mobile */
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-inner { grid-template-columns: 1fr; }
+}
