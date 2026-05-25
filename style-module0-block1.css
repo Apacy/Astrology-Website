@@ -75,6 +75,7 @@
     font-weight: 300;
     color: #867468;
     letter-spacing: 0.06em;
+    margin-left: 35px;
   }
   .breadcrumb a { color: #867468; text-decoration: none; }
   .breadcrumb span { color: var(--deep-gold); font-weight: 400; }

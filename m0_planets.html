@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeviAcademy - Модуль 0 · Система Показателей Планет</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style-module0-block1.css">
+
+
+<style>
+  :root {
+    --b2-accent: #4a2d5a;        
+    --b2-accent-mid: #7a5a8a;    
+    --b2-accent-light: #f5eef8;  
+    --b2-accent-glow: rgba(74,45,90,0.12);
+    --b2-gradient: linear-gradient(to right top, #d4b8c0, #e8d0d8, #fff0f3);
+    --rose: #c9a8d8;
+    --light-rose: #f5eef8;
+  }
+
+  header { background: rgba(245,238,248,0.92); }
+
+  /* Swap hero gradient */
+  .hero { background: var(--b2-gradient); }
+
+  /* Accent colour swaps */
+  .hero-tag {
+    border-color: #c9a8d8;
+    color: var(--b2-accent);
+    box-shadow: 0 2px 8px rgba(45,110,126,0.18);
+  }
+  .hero-content h1 em { color: var(--b2-accent); }
+  .hero-subtitle { color: #5a3a6a; }
+  .hero-content p { color: #4a2a5a; }
+
+  .btn { background: var(--b2-accent); }
+  .btn:hover { background: var(--b2-accent-mid); }
+
+  .price-display .amount { color: var(--b2-accent); }
+
+  /* Stats bar */
+  .stat-num { color: var(--b2-accent); }
+  .stats-bar { border-color: #c9a8d8; }
+  .stat-item { border-right-color: #c9a8d8; }
+
+  /* Section label */
+  .section-label { color: #8a4fa0; }
+  .section-title::after { background: var(--b2-accent); }
+
+  /* Module cards */
+  .module-num { color: #c9a8d8; }
+  .module-card:hover .module-num { color: var(--b2-accent); }
+  .module-card:hover { border-color: #b07ac8; }
+  .module-body h3 { color: var(--b2-accent); }
+  .module-lessons-badge {
+    background: var(--b2-accent-light);
+    border-color: #c9a8d8;
+    color: #7a5a8a;
+  }
+  .module-topics li {
+    background: var(--b2-accent-light);
+    border-color: rgba(201,168,216,0.6);
+    color: #3a1e4a;
+  }
+  .for-card strong { color: var(--b2-accent); }
+  .for-card::before {
+    background: linear-gradient(to right, var(--b2-accent), transparent);
+  }
+
+  /* Footer CTA */
+  .footer-cta { background: var(--b2-gradient); border-color: #c9a8d8; }
+  .footer-cta p { color: #5a3a6a; }
+
+  /* Breadcrumb active */
+  .breadcrumb span { color: var(--b2-accent); }
+
+  /* Decorative circles in hero */
+  .hero::after  { border-color: rgba(74,45,90,0.12); }
+  .hero::before { border-color: rgba(74,45,90,0.16); }
+
+  /* ---- Block 2 exclusive: source-list styling ---- */
+  .source-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto 0;
+  }
+  .source-card {
+    background: white;
+    border: 1px solid #c9a8d8;
+    border-radius: 16px;
+    padding: 1.4rem 1.6rem;
+    border-left: 4px solid var(--b2-accent);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .source-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(45,110,126,0.14);
+  }
+  .source-card .src-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--b2-accent);
+    margin-bottom: 4px;
+  }
+  .source-card .src-sub {
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: #7a5a8a;
+    letter-spacing: 0.06em;
+  }
+
+  /* ---- Practical block tags ---- */
+  .practical-section {
+    background: white;
+    padding: 5rem 0;
+  }
+  .practical-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  .practical-tag {
+    background: var(--b2-accent-light);
+    border: 1px solid #c9a8d8;
+    color: var(--b2-accent);
+    font-size: 0.82rem;
+    font-weight: 300;
+    padding: 8px 18px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+    transition: 0.3s, color 0.3s;
+  }
+  .practical-tag:hover {
+    background: var(--b2-accent);
+    color: white;
+  }
+
+  /* Spinning symbol: unique for block 2 */
+  .hero-visual svg {
+    animation: slowspin 120s linear infinite reverse; /* reverse direction */
+    opacity: 0.15;
+  }
+
+  @media (max-width: 900px) {
+    .source-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ══ COOKIE BANNER ══ */
+  #cookie-banner {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(140px);
+    width: calc(100% - 3rem);
+    max-width: 700px;
+    background: #ffffffcc;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(244,194,194,0.6);
+    border-radius: 20px;
+    padding: 1.4rem 1.8rem;
+    box-shadow: 0 8px 32px rgba(65,36,2,0.1), 0 2px 8px rgba(238,198,211,0.4), inset 0 1px 0 rgba(255,255,255,0.85);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 9999;
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease;
+    font-family: 'Montserrat', sans-serif;
+  }
+  #cookie-banner.visible { transform: translateX(-50%) translateY(0); opacity: 1; }
+  #cookie-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 12%; right: 12%; height: 1px;
+    background: linear-gradient(to right, transparent, rgba(244,194,194,0.9), transparent);
+  }
+  .cookie-icon { font-size: 1.7rem; flex-shrink: 0; }
+  .cookie-text { flex: 1; font-size: 0.75rem; font-weight: 300; color: rgba(46,26,40,0.7); line-height: 1.7; }
+  .cookie-text strong { display: block; font-weight: 400; color: #2e1a28; margin-bottom: 0.25rem; font-size: 0.8rem; }
+  .cookie-text a { color: #412402; text-decoration-color: rgba(65,36,2,0.3); text-underline-offset: 2px; transition: color 0.2s; }
+  .cookie-text a:hover { color: #6b3d04; }
+  .cookie-actions { display: flex; flex-direction: column; gap: 0.5rem; flex-shrink: 0; }
+  .btn-cookie-accept {
+    background: linear-gradient(135deg, #c8845a, #412402);
+    color: #fff; border: none; border-radius: 20px;
+    padding: 0.55rem 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem; font-weight: 400;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; box-shadow: 0 4px 14px rgba(65,36,2,0.25);
+    transition: opacity 0.2s; white-space: nowrap;
+  }
+  .btn-cookie-accept:hover { opacity: 0.88; }
+  .btn-cookie-decline {
+    background: transparent; color: rgba(46,26,40,0.45);
+    border: 1px solid rgba(244,194,194,0.7); border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem; font-weight: 300;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; transition: border-color 0.2s, color 0.2s; white-space: nowrap;
+  }
+  .btn-cookie-decline:hover { border-color: #f4c2c2; color: rgba(46,26,40,0.7); }
+  @media (max-width: 560px) {
+    #cookie-banner { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.2rem 1.3rem; }
+    .cookie-actions { flex-direction: row; width: 100%; }
+    .btn-cookie-accept, .btn-cookie-decline { flex: 1; text-align: center; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+    <div class="logo">
+      <img src="./image/logoms.svg" alt="logo">
+      <a href="index.html" class="main-page-link-style">Marina Smit</a>
+    </div>
+    <nav class="nav">
+      <a href="index.html#edu">Обучение</a>
+      <a href="index.html#services">Консультации</a>
+      <a href="index.html#testimonials">Отзывы</a>
+      <a href="index.html#contact">Контакты</a>
+    </nav>
+    <div class="breadcrumb">
+      <a href="index.html#edu">Обучение → Модуль 0</a> → <span>Система Показателей Планет</span>
+    </div>
+    <div class="burger" id="burger">&#9776;</div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html#edu">Обучение</a>
+    <a href="index.html#services">Консультации</a>
+    <a href="index.html#testimonials">Отзывы</a>
+    <a href="index.html#contact">Контакты</a>
+  </div>
+</header>
+
+<!-- Герой -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag fade-up delay-1">Модуль 0 · Система показателей планет · Блок II</div>
+    <h1 class="fade-up delay-2">
+      Система<br>
+      <em>Показателей</em><br>
+      Всех Планет
+    </h1>
+    <p class="hero-subtitle fade-up delay-3">Классические Источники Джйотиш · Сравнительный Анализ Школ</p>
+    <p class="fade-up delay-3">
+      Для тех, кто хочет опираться на первоисточники - а не на поверхностные трактовки. Каждая Граха как самостоятельная система смыслов.
+    </p>
+    <div class="hero-actions fade-up delay-4">
+      <a href="https://t.me/Deviacademy_bot?start=ZGw6MzE0MTU4" id="bot-link" class="btn deep-link">Записаться</a> 
+      <div class="price-display">
+        <span class="amount">$50</span>
+        <span class="label">единоразовый платёж</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Декоративный символ - Sri Yantra-inspired star для блока 2 -->
+  <div class="hero-visual fade-up delay-5">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer squares rotated (yantra feel) -->
+      <rect x="10" y="10" width="180" height="180" fill="#4a2d5a" fill-opacity="0.04" stroke="none"/>
+      <rect x="36" y="36" width="128" height="128" fill="#4a2d5a" fill-opacity="0.04" stroke="none" transform="rotate(45 100 100)"/>
+      <!-- Inner rings -->
+      <circle cx="100" cy="100" r="80" stroke="#4a2d5a" stroke-width="0.5"/>
+      <circle cx="100" cy="100" r="60" stroke="#4a2d5a" stroke-width="0.5"/>
+      <circle cx="100" cy="100" r="40" stroke="#4a2d5a" stroke-width="0.5"/>
+      <circle cx="100" cy="100" r="20" stroke="#4a2d5a" stroke-width="0.5"/>
+      <!-- Upward triangle large -->
+      <polygon points="100,18 178,155 22,155" stroke="#4a2d5a" stroke-width="0.7"/>
+      <!-- Downward triangle large -->
+      <polygon points="100,182 22,45 178,45" stroke="#4a2d5a" stroke-width="0.7"/>
+      <!-- Upward triangle medium -->
+      <polygon points="100,42 158,142 42,142" stroke="#4a2d5a" stroke-width="0.5"/>
+      <!-- Downward triangle medium -->
+      <polygon points="100,158 42,58 158,58" stroke="#4a2d5a" stroke-width="0.5"/>
+      <!-- Central dot cluster -->
+      <circle cx="100" cy="100" r="4" fill="#4a2d5a"/>
+      <circle cx="100" cy="100" r="8" stroke="#4a2d5a" stroke-width="0.4"/>
+      <!-- 8 petal lotus dots -->
+      <circle cx="100" cy="72" r="2" fill="#4a2d5a"/>
+      <circle cx="100" cy="128" r="2" fill="#4a2d5a"/>
+      <circle cx="72" cy="100" r="2" fill="#4a2d5a"/>
+      <circle cx="128" cy="100" r="2" fill="#4a2d5a"/>
+      <circle cx="80" cy="80" r="2" fill="#4a2d5a"/>
+      <circle cx="120" cy="80" r="2" fill="#4a2d5a"/>
+      <circle cx="80" cy="120" r="2" fill="#4a2d5a"/>
+      <circle cx="120" cy="120" r="2" fill="#4a2d5a"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Панель Статистики -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-num">9</span>
+      <span class="stat-label">Уроков</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">9</span>
+      <span class="stat-label">Файлов-Конспектов</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">18+</span>
+      <span class="stat-label">Часов Обучения</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">5</span>
+      <span class="stat-label">Школ Джйотиш</span>
+    </div>
+  </div>
+</div>
+
+<!-- Классические Источники -->
+<section class="curriculum">
+  <div class="container">
+    <p class="section-label">Первоисточники</p>
+    <h2 class="section-title">На Каких Текстах Основан Курс</h2>
+  </div>
+  <div class="source-grid">
+    <div class="source-card">
+      <div class="src-title">Брихат Парашара Хора Шастра</div>
+      <div class="src-sub">Шлоки с переводом и развёрнутыми пояснениями</div>
+    </div>
+    <div class="source-card">
+      <div class="src-title">Брихад-Джатака Варахамихиры</div>
+      <div class="src-sub">Классические трактовки планет</div>
+    </div>
+    <div class="source-card">
+      <div class="src-title">Саравали · Кальяна Варма</div>
+      <div class="src-sub">Система показателей традиции</div>
+    </div>
+    <div class="source-card">
+      <div class="src-title">Школа Рамана · B. V. Raman</div>
+      <div class="src-sub">Авторитетные современные подходы</div>
+    </div>
+    <div class="source-card">
+      <div class="src-title">Школа Рао · K. N. Rao</div>
+      <div class="src-sub">Практическая система анализа</div>
+    </div>
+    <div class="source-card">
+      <div class="src-title">Сводная Таблица Школ</div>
+      <div class="src-sub">Парашара - Рао - Раман - Саравали - Варахамихира</div>
+    </div>
+  </div>
+</section>
+
+<!-- Учебная программа -->
+<section style="background: var(--light-rose); padding: 5rem 0;">
+  <div class="container">
+    <p class="section-label">Чему вы научитесь</p>
+    <h2 class="section-title">Программа Курса</h2>
+  </div>
+
+  <div class="modules-list">
+
+    <div class="module-card">
+      <div class="module-num">01</div>
+      <div class="module-body">
+        <h3>Солнце · Сурья</h3>
+        <span class="module-lessons-badge">1 урок + файл-конспект</span>
+        <ul class="module-topics">
+          <li>Принципы и значение Сурьи</li>
+          <li>Показатели по БПХШ</li>
+          <li>Адитья · Сравнение школ</li>
+          <li>Сила и слабость планеты</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">02</div>
+      <div class="module-body">
+        <h3>Луна · Чандра</h3>
+        <span class="module-lessons-badge">1 урок + файл-конспект</span>
+        <ul class="module-topics">
+          <li>Ум, эмоции, мать</li>
+          <li>Показатели по Варахамихире</li>
+          <li>Лунные стихии в практике</li>
+          <li>Накшатры Луны</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">03</div>
+      <div class="module-body">
+        <h3>Марс · Мангал</h3>
+        <span class="module-lessons-badge">1 урок + файл-конспект</span>
+        <ul class="module-topics">
+          <li>Энергия, воля, братья</li>
+          <li>Показатели по Саравали</li>
+          <li>Мангал-доша · практика</li>
+          <li>Школа Рао vs Раман</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">04</div>
+      <div class="module-body">
+        <h3>Меркурий · Будха</h3>
+        <span class="module-lessons-badge">1 урок + файл-конспект</span>
+        <ul class="module-topics">
+          <li>Интеллект, коммуникация, торговля</li>
+          <li>Сводная таблица всех школ</li>
+          <li>Ретроградный Будха</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">05</div>
+      <div class="module-body">
+        <h3>Юпитер · Гуру</h3>
+        <span class="module-lessons-badge">1 урок + файл-конспект</span>
+        <ul class="module-topics">
+          <li>Мудрость, достаток, дети</li>
+          <li>Показатели БПХШ со шлоками</li>
+          <li>Гуру как Дхарма-каракa</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">06</div>
+      <div class="module-body">
+        <h3>Венера · Шукра</h3>
+        <span class="module-lessons-badge">1 урок + файл-конспект</span>
+        <ul class="module-topics">
+          <li>Красота, партнёрство, творчество</li>
+          <li>Показатели по Варахамихире</li>
+          <li>Шукра как Кама-карака</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">07</div>
+      <div class="module-body">
+        <h3>Сатурн · Шани</h3>
+        <span class="module-lessons-badge">1 урок + файл-конспект</span>
+        <ul class="module-topics">
+          <li>Карма, дисциплина, ограничения</li>
+          <li>Сравнение всех пяти школ</li>
+          <li>Шани-даша в гороскопе</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">08</div>
+      <div class="module-body">
+        <h3>Раху & Кету</h3>
+        <span class="module-lessons-badge">1 урок + файл-конспект</span>
+        <ul class="module-topics">
+          <li>Теневые планеты · Кармические узлы</li>
+          <li>Желание vs. освобождение</li>
+          <li>Раху/Кету по всем классическим источникам</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">09</div>
+      <div class="module-body">
+        <h3>Синтез и Сравнительный Анализ</h3>
+        <span class="module-lessons-badge">1 урок · Ключевой Урок</span>
+        <ul class="module-topics">
+          <li>Сводная таблица: Парашара - Рао - Раман - Саравали</li>
+          <li>Сопоставление акцентов разных традиций</li>
+          <li>Как выбирать школу для практики</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Практический Блок -->
+<section class="practical-section">
+  <div class="container">
+    <p class="section-label">Каждый урок включает</p>
+    <h2 class="section-title">Практический Блок по Каждой Планете</h2>
+  </div>
+  <div class="practical-grid">
+    <span class="practical-tag">Проявленные материальные объекты</span>
+    <span class="practical-tag">Сила и слабость планеты</span>
+    <span class="practical-tag">Заболевания и уязвимые зоны</span>
+    <span class="practical-tag">Питание и продукты</span>
+    <span class="practical-tag">Деятельность и профессии</span>
+    <span class="practical-tag">Драгоценные и полудрагоценные камни</span>
+    <span class="practical-tag">Одежда и ткани</span>
+    <span class="practical-tag">Растения · цветы · деревья</span>
+    <span class="practical-tag">Животные и птицы</span>
+    <span class="practical-tag">Реальные проявления в жизни</span>
+  </div>
+</section>
+
+<!-- Для кого это -->
+<section class="for-whom section">
+  <div class="container">
+    <p class="section-label">Аудитория</p>
+    <h2 class="section-title">Для Кого Этот Курс</h2>
+    <div class="for-grid">
+      <div class="for-card">
+        <p>Те, кто хочет опираться на <strong>классические тексты</strong>, а не на поверхностные интерпретации.</p>
+      </div>
+      <div class="for-card">
+        <p>Те, кто изучает Джйотиш для <strong>личного понимания</strong> и хочет выстроить системное мышление.</p>
+      </div>
+      <div class="for-card">
+        <p>Те, кто планирует <strong>консультировать</strong> и нуждается в надёжной, структурированной базе.</p>
+      </div>
+      <div class="for-card">
+        <p>Будущие студенты <strong>полной программы Джйотиш</strong>, которые хотят сначала освоить язык планет.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="footer-cta">
+  <div class="footer-cta-inner">
+    <div>
+      <h2>Готовы начать?</h2>
+      <p>Присоединяйтесь к Блоку II и получите опору и структуру для глубокого изучения Джйотиш.</p>
+    </div>
+    <div class="footer-cta-right">
+      <div class="price-display">
+        <span class="amount">$50</span>
+        <span class="label">одноразово · полный доступ</span>
+      </div>
+      <a href="https://t.me/Deviacademy_bot?start=ZGw6MzE0MTU4" id="bot-link" class="btn deep-link">Записаться</a> 
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================
+       FOOTER
+       ================================ -->
+       <footer class="footer">
+        <div class="footer-inner">
+    
+          <!-- Col 1: Brand & contact -->
+          <div class="footer-col footer-brand">
+            <div class="footer-logo">
+              <img src="./image/logoms.svg" alt="Marina Smit logo">
+              <span>Marina Smit</span>
+            </div>
+            <p class="footer-tagline">Ведическая астрология · DeviAcademy</p>
+            <div class="footer-contact">
+              <a href="tel:+380633521117">+38 063 352 11 17</a>
+              <a href="mailto:deviacademy.com.ua@gmail.com">deviacademy.com.ua@gmail.com</a>
+              <span>Киев, Украина</span>
+            </div>
+            <div class="footer-socials">
+              <a href="https://t.me/marinasmiit" target="_blank" class="footer-social-btn" aria-label="Telegram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.48 14.67l-2.95-.924c-.64-.203-.654-.64.136-.948l11.527-4.445c.537-.194 1.006.131.37.895z"/></svg>
+              </a>
+              <a href="https://instagram.com/marina.smit_jyotish" target="_blank" class="footer-social-btn" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+              <a href="https://wa.me/380633521117" target="_blank" class="footer-social-btn" aria-label="WhatsApp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </a>
+            </div>
+          </div>
+    
+          <!-- Col 2: Обучение -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Обучение</h4>
+            <ul class="footer-links">
+              <li><a href="m0_basic.html">Модуль 0 · Основы</a></li>
+              <li><a href="m1_advanced.html">Модуль 1 · Гороскоп</a></li>
+              <li><a href="index.html#edu">Все курсы</a></li>
+            </ul>
+          </div>
+    
+          <!-- Col 3: Консультации -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Консультации</h4>
+            <ul class="footer-links">
+              <li><a href="index.html#services">Натальная карта</a></li>
+              <li><a href="index.html#services">Отношения</a></li>
+              <li><a href="index.html#services">Финансы</a></li>
+              <li><a href="index.html#services">Карьера</a></li>
+              <li><a href="index.html#contact">Записаться</a></li>
+            </ul>
+          </div>
+    
+          <!-- Col 4: Legal -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Документы</h4>
+            <ul class="footer-links">
+              <li><a href="public-offer.html">Публичный договор</a></li>
+              <li><a href="terms-refund.html">Условия и возврат</a></li>
+              <li><a href="privacy-policy.html">Политика конфиденциальности</a></li>
+            </ul>
+            <div class="footer-payment">
+              <svg width="38" height="24" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="4" fill="#fff" stroke="#e0e0e0"/><path d="M14.5 16.5h-2l1.25-8h2L14.5 16.5zm7.25-7.8c-.4-.15-.95-.3-1.7-.3-1.85 0-3.15 1-3.15 2.4 0 1.05.95 1.6 1.65 1.95.75.35 1 .6 1 .9 0 .5-.6.7-1.15.7-.75 0-1.15-.1-1.8-.4l-.25-.1-.25 1.6c.45.2 1.25.4 2.1.4 1.95 0 3.2-1 3.2-2.45 0-.8-.5-1.45-1.6-1.95-.65-.35-1.05-.55-1.05-.9 0-.3.35-.6 1.05-.6.6 0 1.05.15 1.4.3l.15.1.25-1.65zm4.75-.2h-1.45c-.45 0-.8.15-.95.55l-2.7 6.45h1.95l.4-1.05h2.35l.2 1.05H28l-1.5-7zm-2.3 4.4l.7-1.9.4 1.9h-1.1zm-11.5-4.4l-1.85 5.35-.2-1c-.35-1.2-1.45-2.5-2.7-3.15l1.7 6.3h1.95l2.95-7.5H12.7z" fill="#1A1F71"/><path d="M9.5 8.5H6.5l-.05.2c2.3.6 3.85 2.05 4.5 3.8L10.3 9.1c-.1-.45-.45-.6-.8-.6z" fill="#F9A51A"/></svg>
+              <svg width="38" height="24" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="4" fill="#fff" stroke="#e0e0e0"/><circle cx="15" cy="12" r="7" fill="#EB001B"/><circle cx="23" cy="12" r="7" fill="#F79E1B"/><path d="M19 6.8a7 7 0 010 10.4A7 7 0 0119 6.8z" fill="#FF5F00"/></svg>
+            </div>
+          </div>
+    
+        </div>
+        <div class="footer-bottom">
+          <span>© 2024–2026 Marina Smit · DeviAcademy · Все права защищены</span>
+        </div>
+      </footer>
+<script>
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobileNav');
+  burger.addEventListener('click', () => {
+    mobileNav.classList.toggle('show');
+  });
+</script>
+
+<!-- ══ COOKIE BANNER ══ -->
+<div id="cookie-banner" role="dialog" aria-label="Согласие на использование файлов cookie">
+  <span class="cookie-icon">🍃</span>
+  <div class="cookie-text">
+    <strong>Мы используем файлы cookie</strong>
+    Этот сайт использует cookie и пиксели отслеживания (Meta Pixel) для аналитики и улучшения работы сайта. Нажимая «Принять», вы соглашаетесь с нашей
+    <a href="privacy-policy.html">Политикой конфиденциальности</a>.
+  </div>
+  <div class="cookie-actions">
+    <button class="btn-cookie-accept" onclick="acceptCookies()">Принять</button>
+    <button class="btn-cookie-decline" onclick="declineCookies()">Отклонить</button>
+  </div>
+</div>
+
+<!-- ══ COOKIE SCRIPT ══ -->
+<script>
+  (function() {
+    if (!localStorage.getItem('cookie_consent')) {
+      setTimeout(function() {
+        var b = document.getElementById('cookie-banner');
+        if (b) b.classList.add('visible');
+      }, 800);
+    } else if (localStorage.getItem('cookie_consent') === 'accepted') {
+      loadMetaPixel();
+    }
+  })();
+  function acceptCookies() {
+    localStorage.setItem('cookie_consent', 'accepted');
+    hideBanner(); loadMetaPixel();
+  }
+  function declineCookies() {
+    localStorage.setItem('cookie_consent', 'declined');
+    hideBanner();
+  }
+  function hideBanner() {
+    var b = document.getElementById('cookie-banner');
+    if (b) {
+      b.style.opacity = '0';
+      b.style.transform = 'translateX(-50%) translateY(140px)';
+      setTimeout(function() { b.style.display = 'none'; }, 500);
+    }
+  }
+  function loadMetaPixel() {
+    if (window._metaPixelLoaded) return;
+    window._metaPixelLoaded = true;
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2227666094419935');
+    fbq('track', 'PageView');
+  }
+</script>
+<script src="https://astrojyot.customer.smartsender.eu/js/client/dl.min.js"></script>
+
+  <script>
+    function getUTMParams() {
+      const params = new URLSearchParams(window.location.search);
+      const utms = {};
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(key => {
+        if(params.has(key)) utms[key] = params.get(key);
+      });
+      return utms;
+    }
+
+    const utmVariables = getUTMParams();
+
+    ssDeepLink('deep-link', 'astrojyot', false, {
+      variables: utmVariables
+    });
+  </script>
+<script src="footer.js"></script>
+
+</body>
+</html>

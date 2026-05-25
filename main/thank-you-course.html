@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Добро пожаловать — Marina Smit</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:      #412402;
+    --rose:      #c8a090;
+    --teal:      #4a7a6a;
+    --teal-dim:  rgba(74,122,106,0.15);
+    --bg:        #111a17;
+    --bg-card:   #182018;
+    --text:      #eef5f0;
+    --text-dim:  rgba(238,245,240,0.55);
+    --border:    rgba(74,122,106,0.22);
+    --accent:    #8abba8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    position: relative;
+    overflow: auto;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: -180px; right: -180px;
+    width: 520px; height: 520px;
+    border-radius: 50%;
+    border: 1px solid rgba(74,122,106,0.07);
+    pointer-events: none;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -140px; left: -140px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    border: 1px solid rgba(74,122,106,0.05);
+    pointer-events: none;
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 4rem 3.5rem;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.55);
+    animation: cardIn 0.7s ease forwards;
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  @keyframes cardIn { to { opacity: 1; transform: translateY(0); } }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 10%; right: 10%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--accent), transparent);
+  }
+
+  .eyebrow {
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.8rem;
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.6s 0.3s ease forwards;
+  }
+
+  @keyframes fadeIn { to { opacity: 1; } }
+
+  /* Flower of life symbol — teal tinted */
+  .symbol {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 2rem;
+    opacity: 0;
+    animation: fadeIn 0.6s 0.4s ease forwards;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+    opacity: 0;
+    animation: fadeIn 0.6s 0.5s ease forwards;
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+
+  .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 0.6s 0.6s ease forwards;
+  }
+
+  .rule {
+    width: 48px; height: 1px;
+    background: var(--accent);
+    margin: 0 auto 2rem;
+    border: none;
+    opacity: 0;
+    animation: fadeIn 0.6s 0.65s ease forwards;
+  }
+
+  .message {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text-dim);
+    line-height: 1.85;
+    max-width: 440px;
+    margin: 0 auto 2rem;
+    opacity: 0;
+    animation: fadeIn 0.6s 0.7s ease forwards;
+  }
+
+  /* Next steps */
+  .next-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin: 0 auto 2.5rem;
+    max-width: 420px;
+    text-align: left;
+    opacity: 0;
+    animation: fadeIn 0.6s 0.78s ease forwards;
+  }
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--teal-dim);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.9rem 1.1rem;
+  }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 1;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+  .step-text {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--text-dim);
+    line-height: 1.55;
+  }
+  .step-text strong {
+    display: block;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 2px;
+    font-size: 0.84rem;
+  }
+
+  /* Countdown */
+  .countdown-wrap {
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 0.6s 0.88s ease forwards;
+  }
+  .progress-ring {
+    position: relative;
+    width: 72px; height: 72px;
+    margin: 0 auto 0.6rem;
+  }
+  .progress-ring svg { transform: rotate(-90deg); }
+  .progress-ring circle.track { fill: none; stroke: var(--border); stroke-width: 2; }
+  .progress-ring circle.fill {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 188.5;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+  }
+  .progress-ring .num-inside {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 300;
+    color: var(--accent);
+  }
+  .countdown-label {
+    font-size: 0.65rem; font-weight: 400;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--text-dim); display: block;
+  }
+
+  .btn {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--text);
+    padding: 0.85rem 2.2rem;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem; font-weight: 400;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer;
+    transition: background 0.25s, color 0.25s;
+    opacity: 0;
+    animation: fadeIn 0.6s 0.95s ease forwards;
+  }
+  .btn:hover { background: var(--accent); color: var(--bg); }
+
+  .footer-note {
+    margin-top: 3rem;
+    font-size: 0.65rem; font-weight: 300;
+    color: rgba(238,245,240,0.2);
+    letter-spacing: 0.08em;
+    opacity: 0;
+    animation: fadeIn 0.6s 1.05s ease forwards;
+  }
+
+  @media (max-width: 480px) {
+    .card { padding: 3rem 1.8rem; }
+  }
+</style>
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2227666094419935');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2227666094419935&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<div class="card">
+  <span class="eyebrow">DeviAcademy · Marina Smit</span>
+
+  <!-- Flower of Life symbol — teal -->
+  <svg class="symbol" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="36" cy="36" r="34" stroke="#8abba8" stroke-width="0.5" opacity="0.35"/>
+    <circle cx="36" cy="36" r="11" stroke="#8abba8" stroke-width="0.7"/>
+    <circle cx="36" cy="25" r="11" stroke="#8abba8" stroke-width="0.6"/>
+    <circle cx="36" cy="47" r="11" stroke="#8abba8" stroke-width="0.6"/>
+    <circle cx="45.5" cy="30.5" r="11" stroke="#8abba8" stroke-width="0.6"/>
+    <circle cx="45.5" cy="41.5" r="11" stroke="#8abba8" stroke-width="0.6"/>
+    <circle cx="26.5" cy="30.5" r="11" stroke="#8abba8" stroke-width="0.6"/>
+    <circle cx="26.5" cy="41.5" r="11" stroke="#8abba8" stroke-width="0.6"/>
+    <circle cx="36" cy="36" r="3" fill="#8abba8" opacity="0.8"/>
+  </svg>
+
+  <h1>Добро<br><em>пожаловать</em></h1>
+  <p class="subtitle">Вы записались на курс</p>
+  <hr class="rule">
+  <p class="message">
+    Мы рады видеть вас на пути изучения Джйотиш. Марина свяжется с вами в ближайшее время с деталями и дальнейшими шагами.
+  </p>
+
+  <div class="next-steps">
+    <div class="step">
+      <span class="step-num">01</span>
+      <div class="step-text"><strong>Ожидайте письма</strong>Детали и ссылки придут на указанную почту в течение 1–2 рабочих дней.</div>
+    </div>
+    <div class="step">
+      <span class="step-num">02</span>
+      <div class="step-text"><strong>Подготовьтесь</strong>Вам понадобится точная дата, время и место рождения для работы с гороскопом.</div>
+    </div>
+    <div class="step">
+      <span class="step-num">03</span>
+      <div class="step-text"><strong>Присоединяйтесь к клубу</strong>Пока ждёте — вступайте в Астро Клуб Джйотиш в Telegram.</div>
+    </div>
+  </div>
+
+  <div class="countdown-wrap">
+    <div class="progress-ring">
+      <svg width="72" height="72" viewBox="0 0 72 72">
+        <circle class="track" cx="36" cy="36" r="30"/>
+        <circle class="fill" id="ring" cx="36" cy="36" r="30"/>
+      </svg>
+      <div class="num-inside" id="countNum">10</div>
+    </div>
+    <span class="countdown-label">Возврат на главную</span>
+  </div>
+
+  <a href="index.html" class="btn">Вернуться сейчас</a>
+
+  <p class="footer-note">© 2024–2026 Marina Smit · DeviAcademy</p>
+</div>
+
+<script>
+  const total = 10;
+  let remaining = total;
+  const circumference = 2 * Math.PI * 30;
+  const ring = document.getElementById('ring');
+  const num = document.getElementById('countNum');
+  ring.style.strokeDashoffset = 0;
+
+  const timer = setInterval(() => {
+    remaining--;
+    num.textContent = remaining;
+    ring.style.strokeDashoffset = circumference * (remaining / total);
+    if (remaining <= 0) { clearInterval(timer); window.location.href = 'index.html'; }
+  }, 1000);
+</script>
+</body>
+</html>
