@@ -99,3 +99,60 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener('resize', updateButtonPosition);
   updateButtonPosition();
 })();
+
+// ══ TAROT CAROUSEL ══
+(function() {
+  const track = document.getElementById('t-track');
+  const stage = document.getElementById('t-stage');
+  const dotsEl = document.getElementById('tDots');
+  if (!track) return;
+  const total = 7;
+  let cur = 0, userActive = false, autoT, resumeT;
+
+  function vis() {
+    const w = stage.offsetWidth;
+    return w < 600 ? 1 : w < 900 ? 2 : 3;
+  }
+  function cw() {
+    const c = track.querySelector('.t-card');
+    return c ? c.offsetWidth + 14 : 0;
+  }
+  function maxIdx() { return total - vis(); }
+  function go(n) {
+    cur = Math.max(0, Math.min(n, maxIdx()));
+    track.style.transform = 'translateX(-' + (cur * cw()) + 'px)';
+    dotsEl.querySelectorAll('.t-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
+  }
+  function buildDots() {
+    dotsEl.innerHTML = '';
+    for (let i = 0; i <= maxIdx(); i++) {
+      const d = document.createElement('button');
+      d.className = 't-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Отзыв ' + (i + 1));
+      d.addEventListener('click', () => { pause(); go(i); });
+      dotsEl.appendChild(d);
+    }
+  }
+  function pause() {
+    userActive = true;
+    clearInterval(autoT);
+    clearTimeout(resumeT);
+    resumeT = setTimeout(() => { userActive = false; start(); }, 8000);
+  }
+  function start() {
+    clearInterval(autoT);
+    autoT = setInterval(() => { if (!userActive) go(cur >= maxIdx() ? 0 : cur + 1); }, 5500);
+  }
+  document.getElementById('tPrev').addEventListener('click', () => { pause(); go(cur <= 0 ? maxIdx() : cur - 1); });
+  document.getElementById('tNext').addEventListener('click', () => { pause(); go(cur >= maxIdx() ? 0 : cur + 1); });
+  let sx = 0;
+  stage.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', e => {
+    const d = sx - e.changedTouches[0].clientX;
+    if (Math.abs(d) < 40) return;
+    pause();
+    go(d > 0 ? (cur >= maxIdx() ? 0 : cur + 1) : (cur <= 0 ? maxIdx() : cur - 1));
+  }, { passive: true });
+  window.addEventListener('resize', () => { buildDots(); go(Math.min(cur, maxIdx())); });
+  buildDots(); go(0); start();
+})();
